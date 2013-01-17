@@ -1,0 +1,17 @@
+common: &common                                                                 
+  host: localhost                                                               
+  adapter: mysql2                                                               
+  username: root                                                                
+  password: ''
+                                                                                
+development:                                                                    
+  <<: *common                                                                   
+  database: wineplus_development
+                                                                                
+test:                                                                           
+  <<: *common                                                                   
+  database: wineplus_test
+                                                                                
+production:                                                                     
+  <<: *common                                                                   
+  database: wineplus_production
