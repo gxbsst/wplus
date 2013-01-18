@@ -7,9 +7,9 @@ Refinery::I18n.configure do |config|
 
   config.current_locale = "zh-CN"
 
-  config.default_frontend_locale = "zh-CN"
+#  config.default_frontend_locale = "zh-CN"
 
-  config.frontend_locales = ["zh-CN"]
+#  config.frontend_locales = ["zh-CN"]
 
    config.locales = {:en=>"English", "zh-CN"=>"Simplified Chinese", "zh-TW"=>"Traditional Chinese"}
 end
