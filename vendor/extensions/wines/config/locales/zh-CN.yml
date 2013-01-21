@@ -43,3 +43,4 @@ zh-CN:
         cellar_num: '酒柜号'
         cellar_location: '位置'
         slug: Slug
+        photo_id: '图片'

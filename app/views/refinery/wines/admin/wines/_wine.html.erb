@@ -1,0 +1,45 @@
+<%# encoding: utf-8 %>
+<tr>
+
+  <td>
+    <%= image_fu(wine.photo, "70x70px")%>
+  </td>
+
+  <td>
+    <%= wine.year_and_name_zh %><br/>
+    <%= wine.year_and_name_en %>
+  </td>
+
+  <td>
+    <%= wine.price_with_unit %>
+  </td>
+Ï
+  <td>
+    <%= wine.wine_position %>
+  </td>
+
+  <td>
+    <%= wine.variety %>
+  </td>
+
+  <td>
+    <% wine.wine_style.name %>
+  </td>
+
+  <td>
+    <span >
+      
+      <%= link_to refinery_icon_tag("application_go.png"), refinery.wines_wine_path(wine),
+          :title => t('.view_live_html'),
+          :target => "_blank" %>
+      
+      <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_wines_admin_wine_path(wine),
+           :title => t('.edit') %>
+      <%= link_to refinery_icon_tag("delete.png"), refinery.wines_admin_wine_path(wine),
+          :class => "cancel confirm-delete",
+          :title => t('.delete'),
+          :confirm => t('message', :scope => 'refinery.admin.delete', :title => wine.vintage),
+          :method => :delete %>
+    </span>
+  </td>
+</tr>

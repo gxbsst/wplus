@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120131048) do
+ActiveRecord::Schema.define(:version => 20130121092318) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -150,13 +150,14 @@ ActiveRecord::Schema.define(:version => 20130120131048) do
     t.string   "rating_ws",       :limit => 11
     t.string   "rating_jr",       :limit => 11
     t.float    "price"
-    t.string   "info"
+    t.text     "info"
     t.string   "cellar_num",      :limit => 11
     t.string   "cellar_location", :limit => 11
     t.string   "slug",            :limit => 11
     t.integer  "position"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "photo_id"
   end
 
   create_table "seo_meta", :force => true do |t|
