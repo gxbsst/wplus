@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      foods:
+        title: Foods
+    foods:
+      admin:
+        foods:
+          actions:
+            create_new: Add New Food
+            reorder: Reorder Foods
+            reorder_done: Done Reordering Foods
+          records:
+            title: Foods
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Foods yet. Click "Add New Food" to add your first food.
+          food:
+            view_live_html: View this food live <br/><em>(opens in a new window)</em>
+            edit: Edit this food
+            delete: Remove this food forever
+      foods:
+        show:
+          other: Other Foods
+  activerecord:
+    attributes:
+      'refinery/foods/food':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

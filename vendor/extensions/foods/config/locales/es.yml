@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      foods:
+        title: Foods
+#        article: masculino/femenino
+    foods:
+      admin:
+        foods:
+          actions:
+            create_new: Crear nuevo food
+            reorder: Reordenar foods
+            reorder_done: Reordenación de foods completada
+          records:
+            title: Foods
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay foods todavía. Pulsa en "Crear nuevo Food" para crear tu primer food.
+          food:
+            view_live_html: Ver este food como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este food
+            delete: Borrar este food para siempre
+      foods:
+        show:
+          other: Otros foods
+  activerecord:
+    attributes:
+      'refinery/foods/food':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

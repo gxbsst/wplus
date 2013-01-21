@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Drink
+            reorder: Réordonner les Drinks
+            reorder_done: Fin de réordonnancement des Drinks
+          records:
+            title: Drinks
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Drink. Cliquer sur "Créer un(e) nouve(au/l/lle) Drink" pour créer votre premi(er/ère) drink.'
+          drink:
+            view_live_html: Voir ce(t/tte) drink <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) drink
+            delete: Supprimer définitivement ce(t/tte) drink
+      drinks:
+        show:
+          other: Autres Drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: Lag en ny Drink
+            reorder: Endre rekkefølgen på Drinks
+            reorder_done: Ferdig å endre rekkefølgen Drinks
+          records:
+            title: Drinks
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Drinks enda. Klikk på "Lag en ny Drink" for å legge til din første drink.
+          drink:
+            view_live_html: Vis hvordan denne drink ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne drink
+            delete: Fjern denne drink permanent
+      drinks:
+        show:
+          other: Andre Drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price
