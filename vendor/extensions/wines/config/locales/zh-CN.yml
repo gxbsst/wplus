@@ -1,0 +1,45 @@
+zh-CN:
+  refinery:
+    plugins:
+      wines:
+        title: Wines
+    wines:
+      admin:
+        wines:
+          actions:
+            create_new: 建立新的 Wine
+            reorder: 对 Wines 重新排序
+            reorder_done: 对 Wines 的重新排序结束
+          records:
+            title: Wines
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Wines yet. Click "Add New Wine" to add your first wine.
+            no_items_yet: 目前没有 Wines . 点击 "Add New Wine" 创建一个wine.
+          wine:
+            view_live_html: 查看 wine 的最4新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 wine
+            delete: 永久删除 wine
+      wines:
+        show:
+          other: 其他 Wines
+  activerecord:
+    attributes:
+      'refinery/wines/wine':
+        vintage: '年代'
+        name_en: '英文名'
+        name_zh: '中文名'
+        region: '产区'
+        wine_style_id: '葡萄酒类型'
+        capacity: '容量'
+        alcoholicity: '酒精度'
+        variety: '葡萄品种'
+        rating: '推荐指数'
+        rating_rp: "RP"
+        rating_ws: "WS"
+        rating_jr: "JR"
+        price: '价钱'
+        info: '介绍信息'
+        cellar_num: '酒柜号'
+        cellar_location: '位置'
+        slug: Slug

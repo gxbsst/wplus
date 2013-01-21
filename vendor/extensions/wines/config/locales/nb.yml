@@ -1,0 +1,43 @@
+nb:
+  refinery:
+    plugins:
+      wines:
+        title: Wines
+    wines:
+      admin:
+        wines:
+          actions:
+            create_new: Lag en ny Wine
+            reorder: Endre rekkefølgen på Wines
+            reorder_done: Ferdig å endre rekkefølgen Wines
+          records:
+            title: Wines
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Wines enda. Klikk på "Lag en ny Wine" for å legge til din første wine.
+          wine:
+            view_live_html: Vis hvordan denne wine ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne wine
+            delete: Fjern denne wine permanent
+      wines:
+        show:
+          other: Andre Wines
+  activerecord:
+    attributes:
+      'refinery/wines/wine':
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style_id: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug

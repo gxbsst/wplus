@@ -1,0 +1,43 @@
+nl:
+  refinery:
+    plugins:
+      wines:
+        title: Wines
+    wines:
+      admin:
+        wines:
+          actions:
+            create_new: Maak een nieuwe Wine
+            reorder: Wijzig de volgorde van de Wines
+            reorder_done: Klaar met het wijzingen van de volgorde van de Wines
+          records:
+            title: Wines
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Wines. Druk op 'Maak een nieuwe Wine' om de eerste aan te maken.
+          wine:
+            view_live_html: Bekijk deze wine op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze wine
+            delete: Verwijder deze wine voor eeuwig
+      wines:
+        show:
+          other: Andere Wines
+  activerecord:
+    attributes:
+      'refinery/wines/wine':
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style_id: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug

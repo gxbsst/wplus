@@ -1,0 +1,123 @@
+<% content_for :body_content_title do %>
+  <%= @wine.vintage %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Vintage</h1>
+    <p>
+      <%=raw @wine.vintage %>
+    </p>
+  </section>
+  <section>
+    <h1>Name En</h1>
+    <p>
+      <%=raw @wine.name_en %>
+    </p>
+  </section>
+  <section>
+    <h1>Name Zh</h1>
+    <p>
+      <%=raw @wine.name_zh %>
+    </p>
+  </section>
+  <section>
+    <h1>Region</h1>
+    <p>
+      <%=raw @wine.region %>
+    </p>
+  </section>
+  <section>
+    <h1>Wine Style</h1>
+    <p>
+      <%=raw @wine.wine_style_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Capacity</h1>
+    <p>
+      <%=raw @wine.capacity %>
+    </p>
+  </section>
+  <section>
+    <h1>Alcoholicity</h1>
+    <p>
+      <%=raw @wine.alcoholicity %>
+    </p>
+  </section>
+  <section>
+    <h1>Variety</h1>
+    <p>
+      <%=raw @wine.variety %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating</h1>
+    <p>
+      <%=raw @wine.rating %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating Rp</h1>
+    <p>
+      <%=raw @wine.rating_rp %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating Ws</h1>
+    <p>
+      <%=raw @wine.rating_ws %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating Jr</h1>
+    <p>
+      <%=raw @wine.rating_jr %>
+    </p>
+  </section>
+  <section>
+    <h1>Price</h1>
+    <p>
+      <%=raw @wine.price %>
+    </p>
+  </section>
+  <section>
+    <h1>Info</h1>
+    <p>
+      <%=raw @wine.info %>
+    </p>
+  </section>
+  <section>
+    <h1>Cellar Num</h1>
+    <p>
+      <%=raw @wine.cellar_num %>
+    </p>
+  </section>
+  <section>
+    <h1>Cellar Location</h1>
+    <p>
+      <%=raw @wine.cellar_location %>
+    </p>
+  </section>
+  <section>
+    <h1>Slug</h1>
+    <p>
+      <%=raw @wine.slug %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="wines">
+      <% @wines.each do |wine| %>
+        <li>
+          <%= link_to wine.vintage, refinery.wines_wine_path(wine) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

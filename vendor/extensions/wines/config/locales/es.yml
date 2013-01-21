@@ -1,0 +1,44 @@
+es:
+  refinery:
+    plugins:
+      wines:
+        title: Wines
+#        article: masculino/femenino
+    wines:
+      admin:
+        wines:
+          actions:
+            create_new: Crear nuevo wine
+            reorder: Reordenar wines
+            reorder_done: Reordenación de wines completada
+          records:
+            title: Wines
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay wines todavía. Pulsa en "Crear nuevo Wine" para crear tu primer wine.
+          wine:
+            view_live_html: Ver este wine como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este wine
+            delete: Borrar este wine para siempre
+      wines:
+        show:
+          other: Otros wines
+  activerecord:
+    attributes:
+      'refinery/wines/wine':
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style_id: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug
