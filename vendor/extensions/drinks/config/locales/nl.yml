@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: Maak een nieuwe Drink
+            reorder: Wijzig de volgorde van de Drinks
+            reorder_done: Klaar met het wijzingen van de volgorde van de Drinks
+          records:
+            title: Drinks
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Drinks. Druk op 'Maak een nieuwe Drink' om de eerste aan te maken.
+          drink:
+            view_live_html: Bekijk deze drink op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze drink
+            delete: Verwijder deze drink voor eeuwig
+      drinks:
+        show:
+          other: Andere Drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

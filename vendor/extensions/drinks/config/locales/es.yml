@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+#        article: masculino/femenino
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: Crear nuevo drink
+            reorder: Reordenar drinks
+            reorder_done: Reordenación de drinks completada
+          records:
+            title: Drinks
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay drinks todavía. Pulsa en "Crear nuevo Drink" para crear tu primer drink.
+          drink:
+            view_live_html: Ver este drink como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este drink
+            delete: Borrar este drink para siempre
+      drinks:
+        show:
+          other: Otros drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price
