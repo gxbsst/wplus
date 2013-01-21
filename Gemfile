@@ -73,3 +73,5 @@ gem 'exception_notification', '3.0.0', :require => 'exception_notifier'
 
 # API VERSION
 gem 'versionist', '0.3.1'
+
+gem 'refinerycms-wines', :path => 'vendor/extensions'

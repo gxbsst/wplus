@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117052558) do
+ActiveRecord::Schema.define(:version => 20130120131048) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -136,6 +136,29 @@ ActiveRecord::Schema.define(:version => 20130117052558) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
+  create_table "refinery_wines", :force => true do |t|
+    t.string   "vintage",         :limit => 11
+    t.string   "name_en",         :limit => 11
+    t.string   "name_zh",         :limit => 11
+    t.string   "region"
+    t.integer  "wine_style_id"
+    t.string   "capacity",        :limit => 11
+    t.string   "alcoholicity",    :limit => 11
+    t.string   "variety"
+    t.string   "rating",          :limit => 11
+    t.string   "rating_rp",       :limit => 11
+    t.string   "rating_ws",       :limit => 11
+    t.string   "rating_jr",       :limit => 11
+    t.float    "price"
+    t.string   "info"
+    t.string   "cellar_num",      :limit => 11
+    t.string   "cellar_location", :limit => 11
+    t.string   "slug",            :limit => 11
+    t.integer  "position"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
     t.string   "seo_meta_type"
@@ -148,5 +171,12 @@ ActiveRecord::Schema.define(:version => 20130117052558) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
+
+  create_table "wine_styles", :force => true do |t|
+    t.string   "name_en",    :limit => 11
+    t.string   "name_zh",    :limit => 11
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
 end
