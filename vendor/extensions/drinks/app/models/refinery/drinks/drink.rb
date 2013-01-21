@@ -7,7 +7,9 @@ module Refinery
 
       acts_as_indexed :fields => [:name_en, :name_zh]
 
-      validates :name_en, :presence => true, :uniqueness => true
+      validates :name_en,:name_zh, :presence => true, :uniqueness => true
+
+      validates :price, :presence => true
     end
   end
 end
