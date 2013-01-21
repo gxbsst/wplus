@@ -1,0 +1,12 @@
+<ul>
+  <% if ::Refinery::Drinks::Admin::DrinksController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.drinks_admin_drinks_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_drinks_admin_drink_path,
+                 :class => "add_icon" %>
+  </li>
+
+</ul>

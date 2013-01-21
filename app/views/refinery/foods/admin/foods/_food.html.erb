@@ -4,7 +4,7 @@
     <td>check_box</td>
     <td><%= food.name_en %></td>
     <td><%= food.name_zh %></td>
-    <td><%= food.price %></td>
+    <td>¥ <%= food.price %></td>
     <td><%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_foods_admin_food_path(food),
          :title => t('.edit') %></td>
   </tr>
