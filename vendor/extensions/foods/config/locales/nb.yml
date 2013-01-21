@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      foods:
+        title: Foods
+    foods:
+      admin:
+        foods:
+          actions:
+            create_new: Lag en ny Food
+            reorder: Endre rekkefølgen på Foods
+            reorder_done: Ferdig å endre rekkefølgen Foods
+          records:
+            title: Foods
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Foods enda. Klikk på "Lag en ny Food" for å legge til din første food.
+          food:
+            view_live_html: Vis hvordan denne food ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne food
+            delete: Fjern denne food permanent
+      foods:
+        show:
+          other: Andre Foods
+  activerecord:
+    attributes:
+      'refinery/foods/food':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

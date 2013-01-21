@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      foods:
+        title: Foods
+    foods:
+      admin:
+        foods:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Food
+            reorder: Réordonner les Foods
+            reorder_done: Fin de réordonnancement des Foods
+          records:
+            title: Foods
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Food. Cliquer sur "Créer un(e) nouve(au/l/lle) Food" pour créer votre premi(er/ère) food.'
+          food:
+            view_live_html: Voir ce(t/tte) food <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) food
+            delete: Supprimer définitivement ce(t/tte) food
+      foods:
+        show:
+          other: Autres Foods
+  activerecord:
+    attributes:
+      'refinery/foods/food':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @food.name_en %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name En</h1>
+    <p>
+      <%=raw @food.name_en %>
+    </p>
+  </section>
+  <section>
+    <h1>Name Zh</h1>
+    <p>
+      <%=raw @food.name_zh %>
+    </p>
+  </section>
+  <section>
+    <h1>Price</h1>
+    <p>
+      <%=raw @food.price %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="foods">
+      <% @foods.each do |food| %>
+        <li>
+          <%= link_to food.name_en, refinery.foods_food_path(food) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

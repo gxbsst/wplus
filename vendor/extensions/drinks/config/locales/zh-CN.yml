@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: 建立新的 Drink
+            reorder: 对 Drinks 重新排序
+            reorder_done: 对 Drinks 的重新排序结束
+          records:
+            title: Drinks
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Drinks yet. Click "Add New Drink" to add your first drink.
+            no_items_yet: 目前没有 Drinks . 点击 "Add New Drink" 创建一个drink.
+          drink:
+            view_live_html: 查看 drink 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 drink
+            delete: 永久删除 drink
+      drinks:
+        show:
+          other: 其他 Drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

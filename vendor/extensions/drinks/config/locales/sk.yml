@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: Pridať Drink
+            reorder: Preusporiadať Drinks
+            reorder_done: Koniec radenia Drinks
+          records:
+            title: Drinks
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Drinks. Kliknite na "Pridať Drink" pre pridanie prvého drink.
+          drink:
+            view_live_html: Zobraziť náhľad drink<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť drink
+            delete: Zmazať drink
+      drinks:
+        show:
+          other: Daľšie Drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

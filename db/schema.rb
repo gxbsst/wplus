@@ -13,7 +13,37 @@
 
 ActiveRecord::Schema.define(:version => 20130121092318) do
 
+  create_table "refinery_drinks", :force => true do |t|
+    t.string   "name_en"
+    t.string   "name_zh"
+    t.float    "price"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_foods", :force => true do |t|
+    t.string   "name_en"
+    t.string   "name_zh"
+    t.float    "price"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_images", :force => true do |t|
+    t.string   "image_mime_type"
+    t.string   "image_name"
+    t.integer  "image_size"
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.string   "image_uid"
+    t.string   "image_ext"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "refinery_images_copy", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
     t.integer  "image_size"

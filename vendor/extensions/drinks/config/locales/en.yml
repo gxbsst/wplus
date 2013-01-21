@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      drinks:
+        title: Drinks
+    drinks:
+      admin:
+        drinks:
+          actions:
+            create_new: Add New Drink
+            reorder: Reorder Drinks
+            reorder_done: Done Reordering Drinks
+          records:
+            title: Drinks
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Drinks yet. Click "Add New Drink" to add your first drink.
+          drink:
+            view_live_html: View this drink live <br/><em>(opens in a new window)</em>
+            edit: Edit this drink
+            delete: Remove this drink forever
+      drinks:
+        show:
+          other: Other Drinks
+  activerecord:
+    attributes:
+      'refinery/drinks/drink':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price

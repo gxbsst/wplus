@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      foods:
+        title: Foods
+    foods:
+      admin:
+        foods:
+          actions:
+            create_new: Maak een nieuwe Food
+            reorder: Wijzig de volgorde van de Foods
+            reorder_done: Klaar met het wijzingen van de volgorde van de Foods
+          records:
+            title: Foods
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Foods. Druk op 'Maak een nieuwe Food' om de eerste aan te maken.
+          food:
+            view_live_html: Bekijk deze food op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze food
+            delete: Verwijder deze food voor eeuwig
+      foods:
+        show:
+          other: Andere Foods
+  activerecord:
+    attributes:
+      'refinery/foods/food':
+        name_en: Name En
+        name_zh: Name Zh
+        price: Price
