@@ -1,0 +1,15 @@
+<%# encoding: utf-8 %>
+<table cellpadding="5" cellspacing="5">
+  <tr>
+  	<th>图片</th>
+  	<th>名字</th>
+  	<th>价格</th>
+  	<th>位置</th>
+  	<th>产地</th>
+  	<th>类型</th>
+  	<th></th>
+  </tr>
+  <%= render :partial => 'wine', :collection => @wines %>
+</table>
+<%= render '/refinery/admin/sortable_list',
+            :continue_reordering => (local_assigns.keys.include?(:continue_reordering)) ? continue_reordering : true %>
