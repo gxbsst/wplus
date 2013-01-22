@@ -19,3 +19,6 @@ Refinery::Foods::Engine.load_seed
 # Added by Refinery CMS Drinks extension
 Refinery::Drinks::Engine.load_seed
 
+
+# Added by Refinery CMS Api Wines extension
+Refinery::ApiWines::Engine.load_seed

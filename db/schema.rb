@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120131048) do
+ActiveRecord::Schema.define(:version => 20130121091635) do
+
+  create_table "refinery_api_wines", :force => true do |t|
+    t.string   "type"
+    t.string   "vintage"
+    t.string   "name_en"
+    t.string   "name_zh"
+    t.string   "region"
+    t.string   "wine_style"
+    t.string   "capacity"
+    t.string   "alcoholicity"
+    t.string   "variety"
+    t.string   "rating"
+    t.string   "rating_rp"
+    t.string   "rating_ws"
+    t.string   "rating_jr"
+    t.float    "price"
+    t.text     "info"
+    t.string   "cellar_num"
+    t.string   "cellar_location"
+    t.string   "slug"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "refinery_drinks", :force => true do |t|
     t.string   "name_en"
@@ -32,18 +57,6 @@ ActiveRecord::Schema.define(:version => 20130120131048) do
   end
 
   create_table "refinery_images", :force => true do |t|
-    t.string   "image_mime_type"
-    t.string   "image_name"
-    t.integer  "image_size"
-    t.integer  "image_width"
-    t.integer  "image_height"
-    t.string   "image_uid"
-    t.string   "image_ext"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "refinery_images_copy", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
     t.integer  "image_size"

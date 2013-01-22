@@ -1,0 +1,135 @@
+<% content_for :body_content_title do %>
+  <%= @api_wine.type %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Type</h1>
+    <p>
+      <%=raw @api_wine.type %>
+    </p>
+  </section>
+  <section>
+    <h1>Vintage</h1>
+    <p>
+      <%=raw @api_wine.vintage %>
+    </p>
+  </section>
+  <section>
+    <h1>Name En</h1>
+    <p>
+      <%=raw @api_wine.name_en %>
+    </p>
+  </section>
+  <section>
+    <h1>Name Zh</h1>
+    <p>
+      <%=raw @api_wine.name_zh %>
+    </p>
+  </section>
+  <section>
+    <h1>Region</h1>
+    <p>
+      <%=raw @api_wine.region %>
+    </p>
+  </section>
+  <section>
+    <h1>Wine Style</h1>
+    <p>
+      <%=raw @api_wine.wine_style %>
+    </p>
+  </section>
+  <section>
+    <h1>Capacity</h1>
+    <p>
+      <%=raw @api_wine.capacity %>
+    </p>
+  </section>
+  <section>
+    <h1>Alcoholicity</h1>
+    <p>
+      <%=raw @api_wine.alcoholicity %>
+    </p>
+  </section>
+  <section>
+    <h1>Variety</h1>
+    <p>
+      <%=raw @api_wine.variety %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating</h1>
+    <p>
+      <%=raw @api_wine.rating %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating Rp</h1>
+    <p>
+      <%=raw @api_wine.rating_rp %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating Ws</h1>
+    <p>
+      <%=raw @api_wine.rating_ws %>
+    </p>
+  </section>
+  <section>
+    <h1>Rating Jr</h1>
+    <p>
+      <%=raw @api_wine.rating_jr %>
+    </p>
+  </section>
+  <section>
+    <h1>Price</h1>
+    <p>
+      <%=raw @api_wine.price %>
+    </p>
+  </section>
+  <section>
+    <h1>Info</h1>
+    <p>
+      <%=raw @api_wine.info %>
+    </p>
+  </section>
+  <section>
+    <h1>Cellar Num</h1>
+    <p>
+      <%=raw @api_wine.cellar_num %>
+    </p>
+  </section>
+  <section>
+    <h1>Cellar Location</h1>
+    <p>
+      <%=raw @api_wine.cellar_location %>
+    </p>
+  </section>
+  <section>
+    <h1>Slug</h1>
+    <p>
+      <%=raw @api_wine.slug %>
+    </p>
+  </section>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%=raw @api_wine.image_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="api_wines">
+      <% @api_wines.each do |api_wine| %>
+        <li>
+          <%= link_to api_wine.type, refinery.api_wines_api_wine_path(api_wine) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

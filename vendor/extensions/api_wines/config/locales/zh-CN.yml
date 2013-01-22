@@ -1,0 +1,47 @@
+zh-CN:
+  refinery:
+    plugins:
+      api_wines:
+        title: Api Wines
+    api_wines:
+      admin:
+        api_wines:
+          actions:
+            create_new: 建立新的 Api Wine
+            reorder: 对 Api Wines 重新排序
+            reorder_done: 对 Api Wines 的重新排序结束
+          records:
+            title: Api Wines
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Api Wines yet. Click "Add New Api Wine" to add your first api wine.
+            no_items_yet: 目前没有 Api Wines . 点击 "Add New Api Wine" 创建一个api wine.
+          api_wine:
+            view_live_html: 查看 api wine 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 api wine
+            delete: 永久删除 api wine
+      api_wines:
+        show:
+          other: 其他 Api Wines
+  activerecord:
+    attributes:
+      'refinery/api_wines/api_wine':
+        type: Type
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug
+        image_id: Image

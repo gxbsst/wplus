@@ -1,0 +1,45 @@
+sk:
+  refinery:
+    plugins:
+      api_wines:
+        title: Api Wines
+    api_wines:
+      admin:
+        api_wines:
+          actions:
+            create_new: Pridať Api Wine
+            reorder: Preusporiadať Api Wines
+            reorder_done: Koniec radenia Api Wines
+          records:
+            title: Api Wines
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Api Wines. Kliknite na "Pridať Api Wine" pre pridanie prvého api wine.
+          api_wine:
+            view_live_html: Zobraziť náhľad api wine<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť api wine
+            delete: Zmazať api wine
+      api_wines:
+        show:
+          other: Daľšie Api Wines
+  activerecord:
+    attributes:
+      'refinery/api_wines/api_wine':
+        type: Type
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug
+        image_id: Image

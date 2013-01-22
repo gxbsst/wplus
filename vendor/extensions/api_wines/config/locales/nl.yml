@@ -1,0 +1,45 @@
+nl:
+  refinery:
+    plugins:
+      api_wines:
+        title: Api Wines
+    api_wines:
+      admin:
+        api_wines:
+          actions:
+            create_new: Maak een nieuwe Api Wine
+            reorder: Wijzig de volgorde van de Api Wines
+            reorder_done: Klaar met het wijzingen van de volgorde van de Api Wines
+          records:
+            title: Api Wines
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Api Wines. Druk op 'Maak een nieuwe Api Wine' om de eerste aan te maken.
+          api_wine:
+            view_live_html: Bekijk deze api wine op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze api wine
+            delete: Verwijder deze api wine voor eeuwig
+      api_wines:
+        show:
+          other: Andere Api Wines
+  activerecord:
+    attributes:
+      'refinery/api_wines/api_wine':
+        type: Type
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug
+        image_id: Image

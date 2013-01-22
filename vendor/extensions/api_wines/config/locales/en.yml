@@ -1,0 +1,45 @@
+en:
+  refinery:
+    plugins:
+      api_wines:
+        title: Api Wines
+    api_wines:
+      admin:
+        api_wines:
+          actions:
+            create_new: Add New Api Wine
+            reorder: Reorder Api Wines
+            reorder_done: Done Reordering Api Wines
+          records:
+            title: Api Wines
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Api Wines yet. Click "Add New Api Wine" to add your first api wine.
+          api_wine:
+            view_live_html: View this api wine live <br/><em>(opens in a new window)</em>
+            edit: Edit this api wine
+            delete: Remove this api wine forever
+      api_wines:
+        show:
+          other: Other Api Wines
+  activerecord:
+    attributes:
+      'refinery/api_wines/api_wine':
+        type: Type
+        vintage: Vintage
+        name_en: Name En
+        name_zh: Name Zh
+        region: Region
+        wine_style: Wine Style
+        capacity: Capacity
+        alcoholicity: Alcoholicity
+        variety: Variety
+        rating: Rating
+        rating_rp: Rating Rp
+        rating_ws: Rating Ws
+        rating_jr: Rating Jr
+        price: Price
+        info: Info
+        cellar_num: Cellar Num
+        cellar_location: Cellar Location
+        slug: Slug
+        image_id: Image
