@@ -1,0 +1,27 @@
+sk:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: Pridať Api Food
+            reorder: Preusporiadať Api Foods
+            reorder_done: Koniec radenia Api Foods
+          records:
+            title: Api Foods
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Api Foods. Kliknite na "Pridať Api Food" pre pridanie prvého api food.
+          api_food:
+            view_live_html: Zobraziť náhľad api food<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť api food
+            delete: Zmazať api food
+      api_foods:
+        show:
+          other: Daľšie Api Foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image

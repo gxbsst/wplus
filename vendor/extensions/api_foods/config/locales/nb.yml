@@ -1,0 +1,27 @@
+nb:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: Lag en ny Api Food
+            reorder: Endre rekkefølgen på Api Foods
+            reorder_done: Ferdig å endre rekkefølgen Api Foods
+          records:
+            title: Api Foods
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Api Foods enda. Klikk på "Lag en ny Api Food" for å legge til din første api food.
+          api_food:
+            view_live_html: Vis hvordan denne api food ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne api food
+            delete: Fjern denne api food permanent
+      api_foods:
+        show:
+          other: Andre Api Foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image

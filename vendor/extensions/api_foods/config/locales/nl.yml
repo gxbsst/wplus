@@ -1,0 +1,27 @@
+nl:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: Maak een nieuwe Api Food
+            reorder: Wijzig de volgorde van de Api Foods
+            reorder_done: Klaar met het wijzingen van de volgorde van de Api Foods
+          records:
+            title: Api Foods
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Api Foods. Druk op 'Maak een nieuwe Api Food' om de eerste aan te maken.
+          api_food:
+            view_live_html: Bekijk deze api food op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze api food
+            delete: Verwijder deze api food voor eeuwig
+      api_foods:
+        show:
+          other: Andere Api Foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image

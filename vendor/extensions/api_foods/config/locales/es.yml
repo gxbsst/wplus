@@ -1,0 +1,28 @@
+es:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+#        article: masculino/femenino
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: Crear nuevo api food
+            reorder: Reordenar api foods
+            reorder_done: Reordenación de api foods completada
+          records:
+            title: Api Foods
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay api foods todavía. Pulsa en "Crear nuevo Api Food" para crear tu primer api food.
+          api_food:
+            view_live_html: Ver este api food como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este api food
+            delete: Borrar este api food para siempre
+      api_foods:
+        show:
+          other: Otros api foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image

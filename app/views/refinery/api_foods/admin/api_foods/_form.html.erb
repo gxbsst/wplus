@@ -1,0 +1,55 @@
+<%= form_for [refinery,:api_foods_admin,@api_food], :method => :put do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @api_food,
+              :include_object_name => true %>
+
+  <table>
+    <tr>
+      <th>英文名</th>
+      <th>中文名</th>
+      <th>价格</th>
+      <th>SKU</th>
+      <th>位置－左</th>
+      <th>位置－顶</th>
+      <th>颜色</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+   <% @foods.each do |food| %>
+    <tr>
+      <td><%= food.name_en %></td>
+      <td><%= food.name_zh %></td>
+      <td><%= text_field_tag 'price', food.price %></td>
+      <td><%= text_field_tag 'sku' %></td>
+      <td><%= text_field_tag 'rect_left' %></td>
+      <td><%= text_field_tag 'rect_top' %></td>
+      <td><%= text_field_tag 'rect_color' %></td>
+      <td>
+          <%= link_to "/api_food_item/#{food.id}",:method => :delete,data: { confirm: 'Are you sure?' } do %>
+            <%= image_tag "delete.png" %>
+          <% end %>
+      </td>
+      <td>
+        <%= link_to refinery.new_foods_admin_food_path do %>
+          <%= image_tag "add.png" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+    
+  </table>
+
+   <div class='field'>
+          <%= render '/refinery/admin/image_picker',
+                     :f => f,
+                     :field => :image_id,
+                     :image => @api_food.image,
+                     :toggle_image_display => false %>
+
+   </div>
+
+   <div class="update">
+    <%= submit_tag "加入" %>
+   </div>
+<% end -%>

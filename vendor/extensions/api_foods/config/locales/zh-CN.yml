@@ -1,0 +1,29 @@
+zh-CN:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: 建立新的 Api Food
+            reorder: 对 Api Foods 重新排序
+            reorder_done: 对 Api Foods 的重新排序结束
+          records:
+            title: Api Foods
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Api Foods yet. Click "Add New Api Food" to add your first api food.
+            no_items_yet: 目前没有 Api Foods . 点击 "Add New Api Food" 创建一个api food.
+          api_food:
+            view_live_html: 查看 api food 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 api food
+            delete: 永久删除 api food
+      api_foods:
+        show:
+          other: 其他 Api Foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image

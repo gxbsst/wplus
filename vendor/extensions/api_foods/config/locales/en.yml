@@ -1,0 +1,27 @@
+en:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: Add New Api Food
+            reorder: Reorder Api Foods
+            reorder_done: Done Reordering Api Foods
+          records:
+            title: Api Foods
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Api Foods yet. Click "Add New Api Food" to add your first api food.
+          api_food:
+            view_live_html: View this api food live <br/><em>(opens in a new window)</em>
+            edit: Edit this api food
+            delete: Remove this api food forever
+      api_foods:
+        show:
+          other: Other Api Foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image

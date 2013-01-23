@@ -1,0 +1,27 @@
+fr:
+  refinery:
+    plugins:
+      api_foods:
+        title: Api Foods
+    api_foods:
+      admin:
+        api_foods:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Api Food
+            reorder: Réordonner les Api Foods
+            reorder_done: Fin de réordonnancement des Api Foods
+          records:
+            title: Api Foods
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Api Food. Cliquer sur "Créer un(e) nouve(au/l/lle) Api Food" pour créer votre premi(er/ère) api food.'
+          api_food:
+            view_live_html: Voir ce(t/tte) api food <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) api food
+            delete: Supprimer définitivement ce(t/tte) api food
+      api_foods:
+        show:
+          other: Autres Api Foods
+  activerecord:
+    attributes:
+      'refinery/api_foods/api_food':
+        image: Image
