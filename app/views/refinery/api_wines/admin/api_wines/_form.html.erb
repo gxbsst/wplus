@@ -1,0 +1,39 @@
+<%= form_tag "/refinery/api_wines", :method => :post do  -%>
+  <table>
+    <tr>
+      <th>图片</th>
+      <th>英文名</th>
+      <th>中文名</th>
+      <th>价格</th>
+      <th>SKU</th>
+      <th></th>
+    </tr>
+    <% @api_wines.each do |api_wine| %>
+      <tr id="api_wine_<%= api_wine.id%>">
+        <%= hidden_field_tag "api_wine[#{api_wine.id}][id]", api_wine.id %>
+        <td><%= image_fu(api_wine.image, "70x70px")%></td>
+        <td><%= api_wine.name_en %></td>
+        <td><%= api_wine.name_zh %></td>
+        <td><%= text_field_tag "api_wine[#{api_wine.id}][price]", api_wine.price, :size => 10 %></td>
+        <td><%= text_field_tag "api_wine[#{api_wine.id}][sku]", api_wine.sku, :size => 37 %></td>
+        <td>  
+          <%= link_to "删除", [refinery, :api_wines_admin, api_wine.get_parent],
+               :method => :delete, :remote => true %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<div style="text-align:center">
+  <%= submit_tag "提交" %>
+  <%= link_to "返回", refinery.wines_admin_wines_path %>
+</div>
+  
+
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

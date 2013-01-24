@@ -3,26 +3,7 @@
               :object => @wine,
               :include_object_name => true %>
   
-  <div class='field'>
-    <%= f.label :name_en -%>
-    <%= f.text_field :name_en  -%>
 
-  </div>
-  
-  <div class='field'>
-    <%= f.label :name_zh -%>
-    <%= f.text_field :name_zh  -%>
-
-  </div>
-
-  <div class='field'>
-    <%= f.label :vintage -%>
-    <%= select_year Time.local(@wine.vintage.to_s), {:field_name => "wine[vintage]", 
-                                  :start_year => Time.now.year, 
-                                  :end_year => 1950, 
-                                  :prompt => "选择年代"}, {:name => "wine[vintage]"}-%>
-
-  </div>
     
   <div class='field'>
     <%= f.label :wine_style_id -%>
@@ -30,70 +11,13 @@
 
   </div>
 
-  <div class='field'>
-    <%= f.label :region -%>
-    <%= f.text_field :region  -%>
-
-  </div>
 
   
-  <div class='field'>
-    <%= f.label :capacity -%>
-    <%= f.text_field :capacity  -%>mL
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :alcoholicity -%>
-    <%= f.text_field :alcoholicity  -%>%Vol
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :variety -%>
-    <%= f.text_field :variety  -%>
-
-  </div>
-  
-  <div class='field', style="float:left;width:100px;">
-    <%= f.label :rating -%>
-    <%= select_tag "wine[rating]", rating_select_option(@wine.rating).html_safe  -%>
-
-  </div>
-
-  <div class="field", style="float:left;width:100px;">
-    <%= f.label :rating_rp -%>
-    <%= f.text_field :rating_rp, :size => "3"  -%>
-  </div>
-
-  <div class="field", style="float:left;width:100px;">
-    <%= f.label :rating_ws -%>
-    <%= f.text_field :rating_ws, :size => "3"  -%>
-  </div>
-
-  <div class="field", style="float:left;width:100px;">
-    <%= f.label :rating_jr -%>
-    <%= f.text_field :rating_jr, :size => "3"  -%>
-  </div>
-
-  <div class='field' style="clear:both;">
-    <%= f.label :price -%>
-    <%= f.text_field :price  -%>元
-
-  </div>
-  
-  
-  <div class='field'>
-    <%= f.label :cellar_num -%>
-    <%= f.text_field :cellar_num  -%>
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :cellar_location -%>
-    <%= f.text_field :cellar_location  -%>
-
-  </div>
+<%= render :partial => "/share/edit_wine_form", 
+           :locals => {:f => f, 
+                       :rating => @wine.rating, 
+                       :vintage => @wine.vintage,
+                       :model_name => "wine"} %>
 
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>

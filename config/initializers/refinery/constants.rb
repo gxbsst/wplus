@@ -1,0 +1,1 @@
+API_WINE_TYPE = YAML.load_file("#{Rails.root}/config/api_wine_type.yml")

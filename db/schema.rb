@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20130122091551) do
     t.integer  "position"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "wine_id"
+    t.string   "sku"
   end
 
   create_table "refinery_drinks", :force => true do |t|
