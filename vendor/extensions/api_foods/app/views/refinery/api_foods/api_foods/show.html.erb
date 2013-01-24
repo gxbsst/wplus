@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @api_food.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @api_food.image, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="api_foods">
+      <% @api_foods.each do |api_food| %>
+        <li>
+          <%= link_to api_food.title, refinery.api_foods_api_food_path(api_food) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

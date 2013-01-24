@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="api_foods">
+    <% @api_foods.each do |api_food| %>
+      <li>
+        <%= link_to api_food, refinery.api_foods_api_food_path(api_food) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

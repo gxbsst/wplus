@@ -8,8 +8,17 @@
     <th></th>
   </tr>
 
-  <ul id='sortable_list'>
-    <%= render :partial => 'food', :collection => @foods %>
-  </ul>
+  <%= form_tag "/refinery/api_foods/build_food_item",:method => "post" do %>
+    <ul id='sortable_list'>
+      <%= render :partial => 'food', :collection => @foods %>
+    </ul>
+    <tr class="foot">
+      <td></td> 
+      <td></td>
+      <td><%= submit_tag "加入" %></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
 </table>
 

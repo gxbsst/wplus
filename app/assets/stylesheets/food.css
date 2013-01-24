@@ -1,3 +1,8 @@
-table tr th{width:100px;text-align: center;}
+table tr th{clear: both;width:100px;text-align: center;}
 
 table tr td{text-align: center;}
+
+.update{padding: 0 0 0 350px}
+
+td input{width: 60px}
+
