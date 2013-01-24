@@ -9,7 +9,7 @@ module Refinery
       def title
         "Override def title in vendor/extensions/api_foods/app/models/refinery/api_foods/api_food.rb"
       end
-      validates :sku, :presence => true, :uniqueness => true
+      
       belongs_to :image, :class_name => '::Refinery::Image'
       has_many :api_food_items
     end

@@ -25,3 +25,6 @@ Refinery::ApiWines::Engine.load_seed
 
 # Added by Refinery CMS Api Foods extension
 Refinery::ApiFoods::Engine.load_seed
+
+# Added by Refinery CMS Api Waters extension
+Refinery::ApiWaters::Engine.load_seed

@@ -80,3 +80,4 @@ gem 'refinerycms-drinks', :path => 'vendor/extensions'
 
 gem 'refinerycms-api_wines', :path => 'vendor/extensions'
 gem 'refinerycms-api_foods', :path => 'vendor/extensions'
+gem 'refinerycms-api_waters', :path => 'vendor/extensions'

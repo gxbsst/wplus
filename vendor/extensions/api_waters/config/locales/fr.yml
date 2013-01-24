@@ -1,0 +1,27 @@
+fr:
+  refinery:
+    plugins:
+      api_waters:
+        title: Api Waters
+    api_waters:
+      admin:
+        api_waters:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Api Water
+            reorder: Réordonner les Api Waters
+            reorder_done: Fin de réordonnancement des Api Waters
+          records:
+            title: Api Waters
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Api Water. Cliquer sur "Créer un(e) nouve(au/l/lle) Api Water" pour créer votre premi(er/ère) api water.'
+          api_water:
+            view_live_html: Voir ce(t/tte) api water <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) api water
+            delete: Supprimer définitivement ce(t/tte) api water
+      api_waters:
+        show:
+          other: Autres Api Waters
+  activerecord:
+    attributes:
+      'refinery/api_waters/api_water':
+        image: Image
