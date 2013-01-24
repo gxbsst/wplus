@@ -2,6 +2,7 @@ class ApiWines < ActiveRecord::Migration
   def up
     create_table :api_wines do |t|
       t.string :type
+      t.integer :refinery_wine_id
       t.string :vintage        
       t.string :name_en
       t.string :name_zh
