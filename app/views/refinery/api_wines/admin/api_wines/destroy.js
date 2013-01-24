@@ -1,0 +1,1 @@
+$("#api_wine_<%= @api_wine.id %>").html('');

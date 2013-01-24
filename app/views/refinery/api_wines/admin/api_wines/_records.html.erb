@@ -1,0 +1,31 @@
+<% if searching? %>
+  <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
+<% end %>
+<div class='pagination_container'>
+  <p>
+    <%= link_to API_WINE_TYPE['all']['MonthSpecial'], 
+      refinery.api_wines_admin_api_wines_path(:type => "month_special") %>
+
+    <%= link_to API_WINE_TYPE['all']['RandomWine'], 
+      refinery.api_wines_admin_api_wines_path(:type => "random_wine") %>
+
+    <%= link_to API_WINE_TYPE['all']['MembershipDiscount'], 
+      refinery.api_wines_admin_api_wines_path(:type => "membership_discount") %>
+
+    <%= link_to API_WINE_TYPE['all']['SimpleCupDiscount'], 
+      refinery.api_wines_admin_api_wines_path(:type => "simple_cup_discount") %>
+  </p>
+  <% if @api_wines.any? %>
+    <%= render 'api_wines' %>
+  <% else %>
+    <p>
+      <% unless searching? %>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      <% else %>
+        <%= t('no_results', :scope => 'refinery.admin.search') %>
+      <% end %>
+    </p>
+  <% end %>
+</div>

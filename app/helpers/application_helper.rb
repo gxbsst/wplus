@@ -12,4 +12,10 @@ module ApplicationHelper
 		]
 		options_for_select(rating_arr, :selected => rating)
 	end
+
+	def api_type_select_option
+		api_type_hash = API_WINE_TYPE['all'].invert
+		first_item = {'选择种类' => nil}
+		options_for_select first_item.merge(api_type_hash)
+	end
 end

@@ -1,0 +1,5 @@
+all:
+  MonthSpecial: '每月精选'
+  RandomWine: '随便看看'
+  MembershipDiscount: '会员特惠'
+  SimpleCupDiscount: '单杯特卖'
