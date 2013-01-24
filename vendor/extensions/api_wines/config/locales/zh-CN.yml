@@ -26,22 +26,22 @@ zh-CN:
   activerecord:
     attributes:
       'refinery/api_wines/api_wine':
-        type: Type
-        vintage: Vintage
-        name_en: Name En
-        name_zh: Name Zh
-        region: Region
-        wine_style: Wine Style
-        capacity: Capacity
-        alcoholicity: Alcoholicity
-        variety: Variety
-        rating: Rating
-        rating_rp: Rating Rp
-        rating_ws: Rating Ws
-        rating_jr: Rating Jr
-        price: Price
-        info: Info
-        cellar_num: Cellar Num
-        cellar_location: Cellar Location
+        type: 类型
+        vintage: '年代'
+        name_en: '英文名'
+        name_zh: '中文名'
+        region: '产区'
+        wine_style: '葡萄酒类型'
+        capacity: '容量'
+        alcoholicity: '酒精度'
+        variety: '葡萄品种'
+        rating: '推荐指数'
+        rating_rp: "RP"
+        rating_ws: "WS"
+        rating_jr: "JR"
+        price: '价钱'
+        info: '介绍信息'
+        cellar_num: '酒柜号'
+        cellar_location: '位置'
         slug: Slug
-        image_id: Image
+        image_id: 图片

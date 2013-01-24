@@ -1,6 +1,8 @@
 <%# encoding: utf-8 %>
 <tr>
-
+  <td>
+    <%= check_box_tag "wine[ids][]", wine.id %>
+  </td>
   <td>
     <%= image_fu(wine.photo, "70x70px")%>
   </td>
@@ -23,11 +25,11 @@
   </td>
 
   <td>
-    <% wine.wine_style.name %>
+    <%= wine.wine_style.name %>
   </td>
 
   <td>
-    <span >
+    <span>
       
       <%= link_to refinery_icon_tag("application_go.png"), refinery.wines_wine_path(wine),
           :title => t('.view_live_html'),

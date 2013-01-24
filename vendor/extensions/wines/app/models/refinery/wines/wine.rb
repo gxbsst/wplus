@@ -2,6 +2,10 @@
 module Refinery
   module Wines
     class Wine < Refinery::Core::BaseModel
+
+      extend FriendlyId
+      friendly_id :name_en, use: :slugged
+
       self.table_name = 'refinery_wines'
 
       attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :wine_style_id, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :cellar_num, :cellar_location, :slug, :position

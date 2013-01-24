@@ -11,6 +11,7 @@ Refinery::Core::Engine.routes.append do
       resources :api_wines, :except => :show do
         collection do
           post :update_positions
+          post :build_api
         end
       end
     end

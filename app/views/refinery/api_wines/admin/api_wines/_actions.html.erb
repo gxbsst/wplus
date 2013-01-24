@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::ApiWines::Admin::ApiWinesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.api_wines_admin_api_wines_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.wines_admin_wines_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::ApiWines::Admin::ApiWinesController.sortable? && ::Refinery::ApiWines::ApiWine.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Api Wines"),
+                 refinery.api_wines_admin_api_wines_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Api Wines"),
+                 refinery.api_wines_admin_api_wines_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

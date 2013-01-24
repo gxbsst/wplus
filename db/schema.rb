@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121092318) do
+ActiveRecord::Schema.define(:version => 20130123023736) do
 
   create_table "refinery_api_wines", :force => true do |t|
     t.string   "type"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20130121092318) do
     t.integer  "position"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "wine_id"
+    t.string   "sku"
   end
 
   create_table "refinery_drinks", :force => true do |t|
