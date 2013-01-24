@@ -1,0 +1,29 @@
+zh-CN:
+  refinery:
+    plugins:
+      api_waters:
+        title: Api Waters
+    api_waters:
+      admin:
+        api_waters:
+          actions:
+            create_new: 建立新的 Api Water
+            reorder: 对 Api Waters 重新排序
+            reorder_done: 对 Api Waters 的重新排序结束
+          records:
+            title: Api Waters
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Api Waters yet. Click "Add New Api Water" to add your first api water.
+            no_items_yet: 目前没有 Api Waters . 点击 "Add New Api Water" 创建一个api water.
+          api_water:
+            view_live_html: 查看 api water 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 api water
+            delete: 永久删除 api water
+      api_waters:
+        show:
+          other: 其他 Api Waters
+  activerecord:
+    attributes:
+      'refinery/api_waters/api_water':
+        image: Image

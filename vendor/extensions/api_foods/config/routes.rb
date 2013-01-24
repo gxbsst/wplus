@@ -12,6 +12,7 @@ Refinery::Core::Engine.routes.append do
         collection do
           post :update_positions
           post :build_food_item
+          get :build_food_item
         end
       end
     end

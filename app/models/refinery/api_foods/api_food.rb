@@ -10,7 +10,7 @@ module Refinery
         "Override def title in vendor/extensions/api_foods/app/models/refinery/api_foods/api_food.rb"
       end
       belongs_to :image, :class_name => '::Refinery::Image'
-      has_many :api_food_items
+      has_many :api_food_items, :dependent => :destroy
     end
   end
 end

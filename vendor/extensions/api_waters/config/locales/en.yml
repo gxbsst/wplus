@@ -1,0 +1,27 @@
+en:
+  refinery:
+    plugins:
+      api_waters:
+        title: Api Waters
+    api_waters:
+      admin:
+        api_waters:
+          actions:
+            create_new: Add New Api Water
+            reorder: Reorder Api Waters
+            reorder_done: Done Reordering Api Waters
+          records:
+            title: Api Waters
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Api Waters yet. Click "Add New Api Water" to add your first api water.
+          api_water:
+            view_live_html: View this api water live <br/><em>(opens in a new window)</em>
+            edit: Edit this api water
+            delete: Remove this api water forever
+      api_waters:
+        show:
+          other: Other Api Waters
+  activerecord:
+    attributes:
+      'refinery/api_waters/api_water':
+        image: Image
