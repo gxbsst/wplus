@@ -13,8 +13,10 @@ module Refinery
           if params[:type]
             @api_wines = @api_wines.send(params[:type])
           end
+          @api_wines = @api_wines.where("name_en like ? or name_zh like ?", 
+                                      "%#{params[:search]}%", "%#{params[:search]}%") if params[:search]
           page = params[:page] || 1
-          @api_wines = @api_wines.paginate(:page => page, :per_page => 4)
+          @api_wines = @api_wines.paginate(:page => page, :per_page => 20)
         end
 
 

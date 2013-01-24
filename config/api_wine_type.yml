@@ -3,3 +3,4 @@ all:
   RandomWine: '随便看看'
   MembershipDiscount: '会员特惠'
   SimpleCupDiscount: '单杯特卖'
+  WineByBottle: '整瓶特惠'

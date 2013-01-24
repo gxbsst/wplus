@@ -2,8 +2,6 @@
 module Refinery
   module ApiWines
     class ApiWine < Refinery::Core::BaseModel
-      extend Kaminari
-
       extend FriendlyId
       friendly_id :name_en, use: :slugged
       self.table_name = 'refinery_api_wines'
