@@ -1,11 +1,11 @@
+# encoding: UTF-8
 module Refinery
   module ApiWaters
     module Admin
       class ApiWatersController < ::Refinery::AdminController
 
       	def index
-          @api_water = Refinery::ApiWaters::ApiWater.last
-          @api_water_items = @api_water.api_water_items
+          @api_waters = Refinery::ApiWaters::ApiWater.order('position ASC, created_at DESC')
         end
 
         def build_water_item
@@ -34,7 +34,7 @@ module Refinery
            end
 
            redirect_to refinery.api_waters_admin_api_waters_path
-        	
+        	 flash[:notice] = "编辑成功"
         end
 
         def edit
@@ -45,7 +45,8 @@ module Refinery
         def destroy
           @api_water = Refinery::ApiWaters::ApiWater.find(params[:id])
           @api_water.destroy
-
+          
+          flash[:notice] = "删除成功"
           redirect_to refinery.drinks_admin_drinks_path
         end
 

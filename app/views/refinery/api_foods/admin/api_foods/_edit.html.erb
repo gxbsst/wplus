@@ -3,50 +3,54 @@
               :object => @api_food,
               :include_object_name => true %>
 
-  <table>
-    <tr>
-      <th>英文名</th>
-      <th>中文名</th>
-      <th>价格</th>
-      <th>SKU</th>
-      <th>位置－左</th>
-      <th>位置－顶</th>
-      <th>颜色</th>
-      <th></th>
-    </tr>
+   
+ <div class="tab">
+    <table>
+      <tr>
+        <th>英文名</th>
+        <th>中文名</th>
+        <th>价格</th>
+        <th>SKU</th>
+        <th>位置－左</th>
+        <th>位置－顶</th>
+        <th>颜色</th>
+      </tr>
 
-   <% @foods.each do |food| %>
-    <tr>
-      <td><%= food.name_en %></td>
-      <td><%= food.name_zh %></td>
-      <td><%= text_field_tag 'price[]', food.price %></td>
-      <td><%= text_field_tag 'sku[]',food.sku %></td>
-      <td><%= text_field_tag 'rect_left[]',food.rect_left %></td>
-      <td><%= text_field_tag 'rect_top[]',food.rect_top %></td>
-      <td><%= text_field_tag 'rect_color[]',food.rect_color %></td>
-      <td>
-        <%= link_to refinery.new_foods_admin_food_path do %>
-          <%= image_tag "add.png" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-    
-  </table>
+     <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name_en %></td>
+        <td><%= food.name_zh %></td>
+        <td><%= text_field_tag 'price[]', food.price %></td>
+        <td><%= text_field_tag 'sku[]',food.sku %></td>
+        <td><%= text_field_tag 'rect_left[]',food.rect_left %></td>
+        <td><%= text_field_tag 'rect_top[]',food.rect_top %></td>
+        <td><%= text_field_tag 'rect_color[]',food.rect_color %></td>
+      </tr>
+    <% end %>
+      
+    </table>
+  </div>
 
-   <div class='field'>
+  <div class='field'>
           <%= render '/refinery/admin/image_picker',
                      :f => f,
                      :field => :image_id,
                      :image => @api_food.image,
-                     :toggle_image_display => false %>
+                     :toggle_image_display => false%>
 
    </div>
+         
+    <div class="act">
 
-   <div class="update">
-    <%= submit_tag "加入" %>
-   </div>
-    <div class="delete">
-    <%= link_to "取消", refinery.api_foods_admin_api_food_path(@api_food),:method => :delete %>
-   </div>
+         <div class="update">
+          <%= submit_tag "加入" %>
+         </div>
+
+          <div class="del">
+            <%= link_to refinery.api_foods_admin_api_food_path(@api_food),:method => :delete do %>
+                <%= image_tag "cancle.png" %>
+            <% end %>
+         
+         </div>
+    </div>
 <% end -%>
