@@ -1,3 +1,0 @@
-class ApiFoodItemController < ApplicationController
-
-end

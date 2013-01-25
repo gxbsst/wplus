@@ -1,11 +1,12 @@
+# encoding: UTF-8
 module Refinery
   module ApiFoods
     module Admin
       class ApiFoodsController < ::Refinery::AdminController
 
         def index
-          @api_food = Refinery::ApiFoods::ApiFood.last
-          @api_food_items = @api_food.api_food_items
+          @api_foods = Refinery::ApiFoods::ApiFood.order('position ASC, created_at DESC')
+
         end
 
         def build_food_item
@@ -24,7 +25,6 @@ module Refinery
         end
 
         def update
-
           @api_food = Refinery::ApiFoods::ApiFood.find(params[:id])
           @api_food.update_attributes(:image_id => params[:api_food][:image_id])
 
@@ -36,15 +36,17 @@ module Refinery
                                                             :rect_left => params[:rect_left][index], 
                                                             :rect_top => params[:rect_top][index], 
                                                             :rect_color => params[:rect_color][index])
-           end
 
-           redirect_to refinery.api_foods_admin_api_foods_path
+           end
+          flash[:notice] = "编辑成功"
+          redirect_to refinery.api_foods_admin_api_foods_path
         end
         
         def destroy
           @api_food = Refinery::ApiFoods::ApiFood.find(params[:id])
           @api_food.destroy
-
+       
+          flash[:notice] = "删除成功"
           redirect_to refinery.foods_admin_foods_path
         end
 

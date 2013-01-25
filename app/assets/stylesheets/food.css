@@ -2,15 +2,37 @@ table tr th{clear: both;width:100px;text-align: center;}
 
 table tr td{text-align: center;}
 
-.update{padding: 0 0 0 350px}
+th.sku{width: 280px}
 
-td input{width: 60px}
+.item{margin: 0 0 30px 0 }
 
-.delete{margin: -26px 0 0 0;padding: 0 0 0 450px;}
+.content{float: left;}
 
 .img{float: left;}
 
-.tab{float: left;}
+.tab{width: 900px}
 
-.edi{margin: 0 0 0 750px;}
+.action{margin: 30px 0 0 0;width: 60px;float: right;}
+
+.edi{float: left;}
+
+.delete{float: right;}
+
+
+
+
+
+
+.act{width: 170px;padding-right: 60px;margin:0px auto;}
+
+.update{float: left;width: 60px;padding: 40px 40px 0 0 ;}
+
+.del{float: right;padding: 40px 0 0 0 }
+
+td input{width: 60px}
+
+
+
+
+
 
