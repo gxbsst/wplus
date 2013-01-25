@@ -1,0 +1,31 @@
+sk:
+  refinery:
+    plugins:
+      api_tasting_flights:
+        title: Api Tasting Flights
+    api_tasting_flights:
+      admin:
+        api_tasting_flights:
+          actions:
+            create_new: Pridať Api Tasting Flight
+            reorder: Preusporiadať Api Tasting Flights
+            reorder_done: Koniec radenia Api Tasting Flights
+          records:
+            title: Api Tasting Flights
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Api Tasting Flights. Kliknite na "Pridať Api Tasting Flight" pre pridanie prvého api tasting flight.
+          api_tasting_flight:
+            view_live_html: Zobraziť náhľad api tasting flight<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť api tasting flight
+            delete: Zmazať api tasting flight
+      api_tasting_flights:
+        show:
+          other: Daľšie Api Tasting Flights
+  activerecord:
+    attributes:
+      'refinery/api_tasting_flights/api_tasting_flight':
+        price: Price
+        sku: Sku
+        name_en: Name En
+        name_zh: Name Zh
+        image: Image

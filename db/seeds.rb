@@ -23,8 +23,13 @@ Refinery::Drinks::Engine.load_seed
 # Added by Refinery CMS Api Wines extension
 Refinery::ApiWines::Engine.load_seed
 
+<<<<<<< HEAD
 # Added by Refinery CMS Api Foods extension
 Refinery::ApiFoods::Engine.load_seed
 
 # Added by Refinery CMS Api Waters extension
 Refinery::ApiWaters::Engine.load_seed
+=======
+# Added by Refinery CMS Api Tasting Flights extension
+Refinery::ApiTastingFlights::Engine.load_seed
+>>>>>>> refs/heads/feature/wineplus

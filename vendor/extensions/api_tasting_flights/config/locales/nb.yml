@@ -1,0 +1,31 @@
+nb:
+  refinery:
+    plugins:
+      api_tasting_flights:
+        title: Api Tasting Flights
+    api_tasting_flights:
+      admin:
+        api_tasting_flights:
+          actions:
+            create_new: Lag en ny Api Tasting Flight
+            reorder: Endre rekkefølgen på Api Tasting Flights
+            reorder_done: Ferdig å endre rekkefølgen Api Tasting Flights
+          records:
+            title: Api Tasting Flights
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Api Tasting Flights enda. Klikk på "Lag en ny Api Tasting Flight" for å legge til din første api tasting flight.
+          api_tasting_flight:
+            view_live_html: Vis hvordan denne api tasting flight ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne api tasting flight
+            delete: Fjern denne api tasting flight permanent
+      api_tasting_flights:
+        show:
+          other: Andre Api Tasting Flights
+  activerecord:
+    attributes:
+      'refinery/api_tasting_flights/api_tasting_flight':
+        price: Price
+        sku: Sku
+        name_en: Name En
+        name_zh: Name Zh
+        image: Image

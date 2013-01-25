@@ -1,0 +1,31 @@
+fr:
+  refinery:
+    plugins:
+      api_tasting_flights:
+        title: Api Tasting Flights
+    api_tasting_flights:
+      admin:
+        api_tasting_flights:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Api Tasting Flight
+            reorder: Réordonner les Api Tasting Flights
+            reorder_done: Fin de réordonnancement des Api Tasting Flights
+          records:
+            title: Api Tasting Flights
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Api Tasting Flight. Cliquer sur "Créer un(e) nouve(au/l/lle) Api Tasting Flight" pour créer votre premi(er/ère) api tasting flight.'
+          api_tasting_flight:
+            view_live_html: Voir ce(t/tte) api tasting flight <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) api tasting flight
+            delete: Supprimer définitivement ce(t/tte) api tasting flight
+      api_tasting_flights:
+        show:
+          other: Autres Api Tasting Flights
+  activerecord:
+    attributes:
+      'refinery/api_tasting_flights/api_tasting_flight':
+        price: Price
+        sku: Sku
+        name_en: Name En
+        name_zh: Name Zh
+        image: Image
