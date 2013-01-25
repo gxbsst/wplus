@@ -2,7 +2,7 @@
 module Refinery
   module ApiWines
     class ApiWine < Refinery::Core::BaseModel
-      extend Kaminari
+      #extend Kaminari
 
       extend FriendlyId
       friendly_id :name_en, use: :slugged

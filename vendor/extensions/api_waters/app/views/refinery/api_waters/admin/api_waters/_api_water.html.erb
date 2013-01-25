@@ -1,0 +1,20 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(api_water) -%>">
+  <span class='title'>
+    <%= api_water. %>
+
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.api_waters_api_water_path(api_water),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_api_waters_admin_api_water_path(api_water),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.api_waters_admin_api_water_path(api_water),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => api_water.),
+        :method => :delete %>
+  </span>
+</li>

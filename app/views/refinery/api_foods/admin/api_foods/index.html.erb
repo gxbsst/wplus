@@ -1,31 +1,43 @@
-<table>
-    <tr>
-      <th>英文名</th>
-      <th>中文名</th>
-      <th>价格</th>
-      <th>SKU</th>
-      <th>位置－左</th>
-      <th>位置－顶</th>
-      <th>颜色</th>
-      <th></th>
-      <th></th>
-    </tr>
+<div class="con">
+  <div class="img"><%= image_fu(@api_food.image) %></div>
+  <div class="tab">
+    <table>
+        <tr>
+          <th>英文名</th>
+          <th>中文名</th>
+          <th>价格</th>
+          <th>SKU</th>
+          <th>位置－左</th>
+          <th>位置－顶</th>
+          <th>颜色</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+           
+        </tr>
+        <% @api_food_items.each do |api_food_item| %>
+        <tr>
+          <td><%= api_food_item.name_en %></td>
+          <td><%= api_food_item.name_zh %></td>
+          <td><%= api_food_item.price %></td>
+          <td><%= api_food_item.sku %></td>
+          <td><%= api_food_item.rect_left %></td>
+          <td><%= api_food_item.rect_top %></td>
+          <td><%= api_food_item.rect_color %></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+      <% end %>
+         
+      </table>
+  </div>
+</div>
 
-   <% @api_food_items.each do |api_food_item| %>
-    <tr>
-      <td><%= api_food_item.name_en %></td>
-      <td><%= api_food_item.name_zh %></td>
-      <td><%= api_food_item.price %></td>
-      <td><%= api_food_item.sku %></td>
-      <td><%= api_food_item.rect_left %></td>
-      <td><%= api_food_item.rect_top %></td>
-      <td><%= api_food_item.rect_color %></td>
-      <td></td>
-      <td></td>
-    </tr>
+
+<div class="edi">
+  <%= link_to refinery.edit_api_foods_admin_api_food_path(@api_food) do %>
+    <%= image_tag "edit.png",:title => "编辑" %>
   <% end %>
-    <div class="img"><%= image_fu(@api_food.image) %></div>
-    
-
-    
-  </table>
+</div>

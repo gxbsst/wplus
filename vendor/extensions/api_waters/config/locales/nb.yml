@@ -1,0 +1,27 @@
+nb:
+  refinery:
+    plugins:
+      api_waters:
+        title: Api Waters
+    api_waters:
+      admin:
+        api_waters:
+          actions:
+            create_new: Lag en ny Api Water
+            reorder: Endre rekkefølgen på Api Waters
+            reorder_done: Ferdig å endre rekkefølgen Api Waters
+          records:
+            title: Api Waters
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Api Waters enda. Klikk på "Lag en ny Api Water" for å legge til din første api water.
+          api_water:
+            view_live_html: Vis hvordan denne api water ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne api water
+            delete: Fjern denne api water permanent
+      api_waters:
+        show:
+          other: Andre Api Waters
+  activerecord:
+    attributes:
+      'refinery/api_waters/api_water':
+        image: Image

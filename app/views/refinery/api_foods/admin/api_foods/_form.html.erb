@@ -2,7 +2,6 @@
   <%= render '/refinery/admin/error_messages',
               :object => @api_food,
               :include_object_name => true %>
-
   <table>
     <tr>
       <th>英文名</th>
@@ -13,23 +12,17 @@
       <th>位置－顶</th>
       <th>颜色</th>
       <th></th>
-      <th></th>
     </tr>
 
    <% @foods.each do |food| %>
     <tr>
       <td><%= food.name_en %></td>
       <td><%= food.name_zh %></td>
-      <td><%= text_field_tag 'price', food.price %></td>
-      <td><%= text_field_tag 'sku' %></td>
-      <td><%= text_field_tag 'rect_left' %></td>
-      <td><%= text_field_tag 'rect_top' %></td>
-      <td><%= text_field_tag 'rect_color' %></td>
-      <td>
-          <%= link_to "/api_food_item/#{food.id}",:method => :delete,data: { confirm: 'Are you sure?' } do %>
-            <%= image_tag "delete.png" %>
-          <% end %>
-      </td>
+      <td><%= text_field_tag 'price[]', food.price %></td>
+      <td><%= text_field_tag 'sku[]', SecureRandom.uuid %></td>
+      <td><%= text_field_tag 'rect_left[]' %></td>
+      <td><%= text_field_tag 'rect_top[]' %></td>
+      <td><%= text_field_tag 'rect_color[]' %></td>
       <td>
         <%= link_to refinery.new_foods_admin_food_path do %>
           <%= image_tag "add.png" %>
@@ -51,5 +44,10 @@
 
    <div class="update">
     <%= submit_tag "加入" %>
+   </div>
+    <div class="delete">
+        <%= link_to refinery.api_foods_admin_api_food_path(@api_food),:method => :delete do %>
+          <%= image_tag "cancle.png" %>
+        <% end %>
    </div>
 <% end -%>

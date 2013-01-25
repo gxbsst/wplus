@@ -9,8 +9,17 @@
     <th></th>
   </tr>
 
+<%= form_tag "/refinery/api_waters/build_water_item", :method => "post" do %>
   <ul id='sortable_list'>
     <%= render :partial => 'drink', :collection => @drinks %>
   </ul>
+   <tr class="foot">
+      <td></td> 
+      <td></td>
+      <td><%= submit_tag "加入" %></td>
+      <td></td>
+      <td></td>
+    </tr>
+<% end %>
 </table>
 

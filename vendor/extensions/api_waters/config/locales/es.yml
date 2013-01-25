@@ -1,0 +1,28 @@
+es:
+  refinery:
+    plugins:
+      api_waters:
+        title: Api Waters
+#        article: masculino/femenino
+    api_waters:
+      admin:
+        api_waters:
+          actions:
+            create_new: Crear nuevo api water
+            reorder: Reordenar api waters
+            reorder_done: Reordenación de api waters completada
+          records:
+            title: Api Waters
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay api waters todavía. Pulsa en "Crear nuevo Api Water" para crear tu primer api water.
+          api_water:
+            view_live_html: Ver este api water como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este api water
+            delete: Borrar este api water para siempre
+      api_waters:
+        show:
+          other: Otros api waters
+  activerecord:
+    attributes:
+      'refinery/api_waters/api_water':
+        image: Image
