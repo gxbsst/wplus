@@ -8,6 +8,11 @@
     <%= f.text_field :wine_style  -%>
 
   </div>
+  <div class='field'>
+    <%= f.label :sku -%>
+    <%= f.text_field :sku  -%>
+
+  </div>
   
   <%= render :partial => "share/edit_wine_form", 
              :locals => {:f =>f,
