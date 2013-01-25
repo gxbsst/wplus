@@ -1,0 +1,33 @@
+zh-CN:
+  refinery:
+    plugins:
+      api_tasting_flights:
+        title: Api Tasting Flights
+    api_tasting_flights:
+      admin:
+        api_tasting_flights:
+          actions:
+            create_new: 建立新的 Api Tasting Flight
+            reorder: 对 Api Tasting Flights 重新排序
+            reorder_done: 对 Api Tasting Flights 的重新排序结束
+          records:
+            title: Api Tasting Flights
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Api Tasting Flights yet. Click "Add New Api Tasting Flight" to add your first api tasting flight.
+            no_items_yet: 目前没有 Api Tasting Flights . 点击 "Add New Api Tasting Flight" 创建一个api tasting flight.
+          api_tasting_flight:
+            view_live_html: 查看 api tasting flight 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 api tasting flight
+            delete: 永久删除 api tasting flight
+      api_tasting_flights:
+        show:
+          other: 其他 Api Tasting Flights
+  activerecord:
+    attributes:
+      'refinery/api_tasting_flights/api_tasting_flight':
+        price: Price
+        sku: Sku
+        name_en: Name En
+        name_zh: Name Zh
+        image: Image

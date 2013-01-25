@@ -79,3 +79,4 @@ gem 'refinerycms-foods', :path => 'vendor/extensions'
 gem 'refinerycms-drinks', :path => 'vendor/extensions'
 
 gem 'refinerycms-api_wines', :path => 'vendor/extensions'
+gem 'refinerycms-api_tasting_flights', :path => 'vendor/extensions'

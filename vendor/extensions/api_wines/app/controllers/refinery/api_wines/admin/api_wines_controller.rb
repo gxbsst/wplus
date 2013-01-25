@@ -6,7 +6,7 @@ module Refinery
 
         crudify :'refinery/api_wines/api_wine',
                 :title_attribute => 'type', :xhr_paging => true
-        before_filter :check_wine_id_and_api_type, :only => :build_api
+        before_filter :check_wine_id_and_api_type, :only => :new
 
         def index
           @api_wines = Refinery::ApiWines::ApiWine.order('id desc')
@@ -19,10 +19,9 @@ module Refinery
           @api_wines = @api_wines.paginate(:page => page, :per_page => 20)
         end
 
-
-        def build_api
-        	wines = Refinery::Wines::Wine.find(params[:wine][:ids])
-        	@api_wines = []
+        def new
+          wines = Refinery::Wines::Wine.find(params[:wine][:ids])
+          @api_wines = []
           wines.each do |wine|
             api_wine = Refinery::ApiWines::ApiWine.where(:name_en => wine.name_en, :type => @class_type).
                                                   first_or_initialize
@@ -32,8 +31,7 @@ module Refinery
             end
             @api_wines << api_wine
           end
-        	render :new
-      	end
+        end
 
         def edit
           api_wine = Refinery::ApiWines::ApiWine.find(params[:id])
@@ -80,7 +78,7 @@ module Refinery
       			redirect_to refinery.wines_admin_wines_path
       		end 
 
-          @class_type = "Refinery::ApiWines::#{params[:wine][:api_type]}"
+          @class_type = "Refinery::ApiWines::#{params[:wine][:api_type].classify}"
           unless @class_type.safe_constantize
             flash[:error] = "非法请求"
             redirect_to refinery.wines_admin_wines_path

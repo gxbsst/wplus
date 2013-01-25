@@ -19,6 +19,7 @@ module Refinery
       scope :month_special, where(:type => "Refinery::ApiWines::MonthSpecial")
       scope :random_wine, where(:type => "Refinery::ApiWines::RandomWine")
       scope :simple_cup_discount, where(:type => "Refinery::ApiWines::SimpleCupDiscount")
+      scope :wine_by_bottle, where(:type => "Refinery::ApiWines::WineByBottle")
 
       def init(wine)
       	self.vintage = wine.vintage
@@ -64,7 +65,7 @@ module Refinery
       end
 
       def api_wine_type
-        API_WINE_TYPE['all']["#{self.class.name.split('::').last}"]
+        API_WINE_TYPE['api_wine']["#{self.class.name.underscore.split('/').last}"]
       end
 
     end

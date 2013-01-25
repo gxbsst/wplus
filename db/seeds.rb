@@ -22,3 +22,6 @@ Refinery::Drinks::Engine.load_seed
 
 # Added by Refinery CMS Api Wines extension
 Refinery::ApiWines::Engine.load_seed
+
+# Added by Refinery CMS Api Tasting Flights extension
+Refinery::ApiTastingFlights::Engine.load_seed

@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123023736) do
+ActiveRecord::Schema.define(:version => 20130125024600) do
+
+  create_table "api_tasting_flight_items", :force => true do |t|
+    t.integer  "image_id"
+    t.integer  "api_tasting_flight_id"
+    t.string   "name_en"
+    t.string   "name_zh"
+    t.float    "price"
+    t.string   "sku"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  create_table "refinery_api_tasting_flights", :force => true do |t|
+    t.float    "price"
+    t.string   "sku"
+    t.string   "name_en"
+    t.string   "name_zh"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "refinery_api_wines", :force => true do |t|
     t.string   "type"
