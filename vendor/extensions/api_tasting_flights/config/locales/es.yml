@@ -1,0 +1,32 @@
+es:
+  refinery:
+    plugins:
+      api_tasting_flights:
+        title: Api Tasting Flights
+#        article: masculino/femenino
+    api_tasting_flights:
+      admin:
+        api_tasting_flights:
+          actions:
+            create_new: Crear nuevo api tasting flight
+            reorder: Reordenar api tasting flights
+            reorder_done: Reordenación de api tasting flights completada
+          records:
+            title: Api Tasting Flights
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay api tasting flights todavía. Pulsa en "Crear nuevo Api Tasting Flight" para crear tu primer api tasting flight.
+          api_tasting_flight:
+            view_live_html: Ver este api tasting flight como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este api tasting flight
+            delete: Borrar este api tasting flight para siempre
+      api_tasting_flights:
+        show:
+          other: Otros api tasting flights
+  activerecord:
+    attributes:
+      'refinery/api_tasting_flights/api_tasting_flight':
+        price: Price
+        sku: Sku
+        name_en: Name En
+        name_zh: Name Zh
+        image: Image

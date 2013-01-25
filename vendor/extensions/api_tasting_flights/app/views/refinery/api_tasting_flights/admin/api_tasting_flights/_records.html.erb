@@ -2,11 +2,8 @@
   <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
 <% end %>
 <div class='pagination_container'>
-  <p>
-    <%= render "api_wine_tabs" %>
-  </p>
-  <% if @api_wines.any? %>
-    <%= render 'api_wines' %>
+  <% if @api_tasting_flights.any? %>
+    <%= render 'api_tasting_flights' %>
   <% else %>
     <p>
       <% unless searching? %>

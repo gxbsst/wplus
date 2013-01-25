@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="api_tasting_flights">
+    <% @api_tasting_flights.each do |api_tasting_flight| %>
+      <li>
+        <%= link_to api_tasting_flight.sku, refinery.api_tasting_flights_api_tasting_flight_path(api_tasting_flight) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

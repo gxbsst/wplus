@@ -1,0 +1,27 @@
+<tr>
+  <td><%= image_fu(api_tasting_flight.image, "70x70px") %>
+  </td>
+  <td><%= api_tasting_flight.name_en %></td>
+  <td><%= api_tasting_flight.name_zh %></td>
+  <td><%= api_tasting_flight.price %></td>
+  <td>
+    <%= api_tasting_flight.sku %>
+  </td>
+  
+  <td>
+    <span>
+      
+      <%= link_to refinery_icon_tag("application_go.png"), refinery.api_tasting_flights_api_tasting_flight_path(api_tasting_flight),
+          :title => t('.view_live_html'),
+          :target => "_blank" %>
+      
+      <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_api_tasting_flights_admin_api_tasting_flight_path(api_tasting_flight),
+           :title => t('.edit') %>
+      <%= link_to refinery_icon_tag("delete.png"), refinery.api_tasting_flights_admin_api_tasting_flight_path(api_tasting_flight),
+          :class => "cancel confirm-delete",
+          :title => t('.delete'),
+          :confirm => t('message', :scope => 'refinery.admin.delete', :title => api_tasting_flight.sku),
+          :method => :delete %>
+    </span>
+  </td>
+</tr>

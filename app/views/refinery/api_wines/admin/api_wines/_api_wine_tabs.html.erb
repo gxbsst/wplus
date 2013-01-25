@@ -1,0 +1,3 @@
+<% API_WINE_TYPE['api_wine'].each do |key, value| %>
+	<%= link_to value, refinery.api_wines_admin_api_wines_path(:type => key) %>
+<% end %>

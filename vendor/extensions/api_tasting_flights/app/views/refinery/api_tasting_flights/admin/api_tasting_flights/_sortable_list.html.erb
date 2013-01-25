@@ -1,0 +1,13 @@
+<table cellpadding="5" cellspacing="5">
+    <tr>
+       	<th>图片</th>
+    	<th>中文名</th>
+    	<th>英文名</th>
+    	<th>价格</th>
+    	<th>SKU</th>
+    	
+    </tr>
+  	<%= render :partial => 'api_tasting_flight', :collection => @api_tasting_flights %>
+</table>
+<%= render '/refinery/admin/sortable_list',
+            :continue_reordering => (local_assigns.keys.include?(:continue_reordering)) ? continue_reordering : true %>

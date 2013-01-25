@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @api_tasting_flight.sku %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Price</h1>
+    <p>
+      <%=raw @api_tasting_flight.price %>
+    </p>
+  </section>
+  <section>
+    <h1>Sku</h1>
+    <p>
+      <%=raw @api_tasting_flight.sku %>
+    </p>
+  </section>
+  <section>
+    <h1>Name En</h1>
+    <p>
+      <%=raw @api_tasting_flight.name_en %>
+    </p>
+  </section>
+  <section>
+    <h1>Name Zh</h1>
+    <p>
+      <%=raw @api_tasting_flight.name_zh %>
+    </p>
+  </section>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @api_tasting_flight.image, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="api_tasting_flights">
+      <% @api_tasting_flights.each do |api_tasting_flight| %>
+        <li>
+          <%= link_to api_tasting_flight.sku, refinery.api_tasting_flights_api_tasting_flight_path(api_tasting_flight) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

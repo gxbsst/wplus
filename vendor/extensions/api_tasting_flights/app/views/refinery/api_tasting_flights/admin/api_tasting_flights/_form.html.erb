@@ -1,0 +1,70 @@
+<%= form_for [refinery, :api_tasting_flights_admin, @api_tasting_flight] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @api_tasting_flight,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :price -%>
+    <%= f.text_field :price, :size => 10 -%>元
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :sku -%>
+    <%= f.text_field :sku, :size => 40  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :name_en -%>
+    <%= f.text_field :name_en  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :name_zh -%>
+    <%= f.text_field :name_zh  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :image_id,
+               :image => @api_tasting_flight.image,
+               :toggle_image_display => false %>
+
+  </div>
+  <p>关联的酒</p>
+  <table cellpadding="5" cellspacing="5">
+    <tr>
+      <th>图片</th>
+      <th>英文名</th>
+      <th>中文名</th>
+    </tr>
+  <%= f.fields_for :api_tasting_flight_items, @api_tasting_flight_items do |i| %>
+    <div class='field'>
+        <tr>
+          <td>  
+            <%= i.text_field :image_id, :type => 'hidden' %>
+            <%= image_fu(i.object.image, "70x70px")%>
+          </td>
+          <td>
+            <%= i.text_field :name_en, :type => 'hidden' %>
+            <%= i.object.name_en %>
+          </td>
+          <td>
+            <%= i.text_field :name_zh, :type => 'hidden' %>
+            <%= i.object.name_zh %>
+          </td>
+        </tr>
+    </div>
+  <% end %>
+</table>
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.api_tasting_flights.admin.api_tasting_flights.api_tasting_flight'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @api_tasting_flight.sku) %>
+<% end -%>

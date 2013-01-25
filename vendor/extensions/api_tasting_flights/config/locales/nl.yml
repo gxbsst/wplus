@@ -1,0 +1,31 @@
+nl:
+  refinery:
+    plugins:
+      api_tasting_flights:
+        title: Api Tasting Flights
+    api_tasting_flights:
+      admin:
+        api_tasting_flights:
+          actions:
+            create_new: Maak een nieuwe Api Tasting Flight
+            reorder: Wijzig de volgorde van de Api Tasting Flights
+            reorder_done: Klaar met het wijzingen van de volgorde van de Api Tasting Flights
+          records:
+            title: Api Tasting Flights
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Api Tasting Flights. Druk op 'Maak een nieuwe Api Tasting Flight' om de eerste aan te maken.
+          api_tasting_flight:
+            view_live_html: Bekijk deze api tasting flight op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze api tasting flight
+            delete: Verwijder deze api tasting flight voor eeuwig
+      api_tasting_flights:
+        show:
+          other: Andere Api Tasting Flights
+  activerecord:
+    attributes:
+      'refinery/api_tasting_flights/api_tasting_flight':
+        price: Price
+        sku: Sku
+        name_en: Name En
+        name_zh: Name Zh
+        image: Image

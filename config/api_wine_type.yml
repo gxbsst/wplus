@@ -1,5 +1,9 @@
-all:
-  MonthSpecial: '每月精选'
-  RandomWine: '随便看看'
-  MembershipDiscount: '会员特惠'
-  SimpleCupDiscount: '单杯特卖'
+api_wine:
+  month_special: '每月精选'
+  random_wine: '随便看看'
+  membership_discount: '会员特惠'
+  simple_cup_discount: '单杯特卖'
+  wine_by_bottle: '整瓶特惠'
+
+api_tasting_flight:
+  tasting_flight: '系列品鉴'

@@ -11,6 +11,8 @@ PATH
   specs:
     refinerycms-api_foods (1.0)
       refinerycms-core (~> 2.0.9)
+    refinerycms-api_tasting_flights (1.0)
+      refinerycms-core (~> 2.0.9)
     refinerycms-api_waters (1.0)
       refinerycms-core (~> 2.0.9)
     refinerycms-api_wines (1.0)
@@ -311,6 +313,7 @@ DEPENDENCIES
   rails (= 3.2.11)
   refinerycms (~> 2.0.0)
   refinerycms-api_foods!
+  refinerycms-api_tasting_flights!
   refinerycms-api_waters!
   refinerycms-api_wines!
   refinerycms-drinks!

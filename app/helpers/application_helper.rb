@@ -14,7 +14,7 @@ module ApplicationHelper
 	end
 
 	def api_type_select_option
-		api_type_hash = API_WINE_TYPE['all'].invert
+		api_type_hash = API_WINE_TYPE['api_wine'].merge(API_WINE_TYPE['api_tasting_flight']).invert
 		first_item = {'选择种类' => nil}
 		options_for_select first_item.merge(api_type_hash)
 	end
