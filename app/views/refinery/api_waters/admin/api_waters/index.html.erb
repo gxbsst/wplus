@@ -37,7 +37,7 @@
         <% end %>
       </div>
       <div class="delete">
-        <%= link_to refinery.api_waters_admin_api_water_path(api_water),:method => :delete do %>
+        <%= link_to refinery.api_waters_admin_api_water_path(api_water,:redirect_to_food => true),:method => :delete do %>
           <%= image_tag "delete.png" %>
         <% end %>
       </div>

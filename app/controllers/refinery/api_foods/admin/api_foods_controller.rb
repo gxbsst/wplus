@@ -45,9 +45,13 @@ module Refinery
         def destroy
           @api_food = Refinery::ApiFoods::ApiFood.find(params[:id])
           @api_food.destroy
-       
-          flash[:notice] = "删除成功"
-          redirect_to refinery.foods_admin_foods_path
+  
+          if params[:redirect_to_food]
+            flash[:notice] = "删除成功"
+             redirect_to refinery.api_foods_admin_api_foods_path
+          else
+             redirect_to refinery.foods_admin_foods_path
+          end
         end
 
       end
