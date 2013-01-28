@@ -46,8 +46,13 @@ module Refinery
           @api_water = Refinery::ApiWaters::ApiWater.find(params[:id])
           @api_water.destroy
           
-          flash[:notice] = "删除成功"
-          redirect_to refinery.drinks_admin_drinks_path
+
+          if params[:redirect_to_food]
+             flash[:notice] = "删除成功"
+             redirect_to refinery.api_waters_admin_api_waters_path
+          else
+             redirect_to refinery.drinks_admin_drinks_path
+          end
         end
 
       end

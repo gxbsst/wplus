@@ -2,7 +2,7 @@
   <% @api_food_items = api_food.api_food_items %>
   <div class="item">
       <div class="content">
-        <div class="img"><%= image_fu(api_food.image,"90x90px") %></div>
+        <div class="img"><%= image_fu(api_food.image,"90x90") %></div>
         <div class="tab">
           <table>
               <tr>
@@ -35,7 +35,7 @@
             <% end %>
           </div>
           <div class="delete">
-              <%= link_to refinery.api_foods_admin_api_food_path(api_food),:method => :delete do %>
+              <%= link_to refinery.api_foods_admin_api_food_path(api_food, :redirect_to_food => true), :method => :delete do %>
                 <%= image_tag "delete.png" %>
               <% end %>
          </div>
