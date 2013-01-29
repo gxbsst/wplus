@@ -2,30 +2,30 @@ zh-CN:
   refinery:
     plugins:
       foods:
-        title: Foods
+        title: 美食
     foods:
       admin:
         foods:
           actions:
-            create_new: 建立新的 Food
-            reorder: 对 Foods 重新排序
-            reorder_done: 对 Foods 的重新排序结束
+            create_new: 建立新的 美食
+            reorder: 对 美食 重新排序
+            reorder_done: 对 美食 的重新排序结束
           records:
-            title: Foods
+            title: 美食
             sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
 
             # There are no Foods yet. Click "Add New Food" to add your first food.
-            no_items_yet: 目前没有 Foods . 点击 "Add New Food" 创建一个food.
+            no_items_yet: 目前没有 美食 . 点击 "Add New Food" 创建一个美食.
           food:
-            view_live_html: 查看 food 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 food
-            delete: 永久删除 food
+            view_live_html: 查看 美食 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 美食
+            delete: 永久删除 美食
       foods:
         show:
-          other: 其他 Foods
+          other: 其他 美食
   activerecord:
     attributes:
       'refinery/foods/food':
-        name_en: Name En
-        name_zh: Name Zh
-        price: Price
+        name_en: 英文名
+        name_zh: 中文名
+        price: 价格
