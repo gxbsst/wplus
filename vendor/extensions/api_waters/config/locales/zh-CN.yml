@@ -2,28 +2,28 @@ zh-CN:
   refinery:
     plugins:
       api_waters:
-        title: Api Waters
+        title: 饮料（客户端）
     api_waters:
       admin:
         api_waters:
           actions:
-            create_new: 建立新的 Api Water
-            reorder: 对 Api Waters 重新排序
+            create_new: 建立新的 饮料（客户端）
+            reorder: 对 饮料（客户端） 重新排序
             reorder_done: 对 Api Waters 的重新排序结束
           records:
-            title: Api Waters
+            title: 饮料（客户端）
             sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
 
             # There are no Api Waters yet. Click "Add New Api Water" to add your first api water.
-            no_items_yet: 目前没有 Api Waters . 点击 "Add New Api Water" 创建一个api water.
+            no_items_yet: 目前没有 饮料（客户端） . 点击 "添加新 饮料（客户端）" 创建一个饮料（客户端）.
           api_water:
-            view_live_html: 查看 api water 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 api water
-            delete: 永久删除 api water
+            view_live_html: 查看 饮料（客户端） 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 饮料（客户端）
+            delete: 永久删除 饮料（客户端）
       api_waters:
         show:
-          other: 其他 Api Waters
+          other: 其他 饮料（客户端）
   activerecord:
     attributes:
       'refinery/api_waters/api_water':
-        image: Image
+        image: 图片
