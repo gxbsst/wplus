@@ -1,0 +1,33 @@
+<div> <%= render "search_wine_form" %></div>
+<br/><br/>
+<%= will_paginate @wine_info %>
+<% if @wine_info.present? %>
+	<table>
+		<tr>
+			<th>英文名</th>
+			<th>中文名</th>
+			<th style='text-align:center;'>选择年代</th>
+		</tr>
+	<% @wine_info.each do |wine| %>
+		<tr>
+			<td>
+				<%= wine["name_en"] %>
+				<%= hidden_field_tag "wine[name_en]", wine['name_en'] %>
+			</td>
+			<td>
+				<%= wine['name_zh'] %>
+				<%= hidden_field_tag "wine[name_zh]", wine['name_zh'] %>
+			</td>
+			<td>
+				<div style="width:300px;">
+					<% wine['details'].each do |detail| %>
+						<%= link_to detail['show_year'], refinery.get_wine_detail_wines_admin_wines_path(:wine_detail_id => detail['id']) %>
+					<% end %>
+				</div>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+<% else %>
+  对不起没有搜到和<b><%= params[:word] %></b>, 请确认你输入的信息无误.
+<% end %>

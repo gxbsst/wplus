@@ -13,7 +13,7 @@ module Refinery
       acts_as_indexed :fields => [:vintage, :name_en, :name_zh, :region, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :info, :cellar_num, :cellar_location, :slug]
 
       validates :vintage, :name_en, :presence => true
-      validates :name_en, :uniqueness => true
+      validates :name_en, :uniqueness => {:scope => :vintage}
       belongs_to :photo, :class_name => '::Refinery::Image'
       belongs_to :wine_style
 

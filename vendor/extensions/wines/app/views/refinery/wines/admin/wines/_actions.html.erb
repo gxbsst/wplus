@@ -5,7 +5,7 @@
     </li>
   <% end %>
   <li>
-    <%= link_to t('.create_new'), refinery.new_wines_admin_wine_path,
+    <%= link_to t('.create_new'), refinery.search_wine_wines_admin_wines_path,
                  :class => "add_icon" %>
   </li>
 <% if !searching? && ::Refinery::Wines::Admin::WinesController.sortable? && ::Refinery::Wines::Wine.any? %>
