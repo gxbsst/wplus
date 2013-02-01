@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125024600) do
+ActiveRecord::Schema.define(:version => 20130201062715) do
 
   create_table "api_food_items", :force => true do |t|
     t.string   "name_en"
@@ -244,27 +244,29 @@ ActiveRecord::Schema.define(:version => 20130125024600) do
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
   create_table "refinery_wines", :force => true do |t|
-    t.string   "vintage",         :limit => 11
-    t.string   "name_en",         :limit => 11
-    t.string   "name_zh",         :limit => 11
+    t.string   "vintage",          :limit => 11
+    t.string   "name_en",          :limit => 11
+    t.string   "name_zh",          :limit => 11
     t.string   "region"
     t.integer  "wine_style_id"
-    t.string   "capacity",        :limit => 11
-    t.string   "alcoholicity",    :limit => 11
+    t.string   "capacity",         :limit => 11
+    t.string   "alcoholicity",     :limit => 11
     t.string   "variety"
-    t.string   "rating",          :limit => 11
-    t.string   "rating_rp",       :limit => 11
-    t.string   "rating_ws",       :limit => 11
-    t.string   "rating_jr",       :limit => 11
+    t.string   "rating",           :limit => 11
+    t.string   "rating_rp",        :limit => 11
+    t.string   "rating_ws",        :limit => 11
+    t.string   "rating_jr",        :limit => 11
     t.float    "price"
     t.text     "info"
-    t.string   "cellar_num",      :limit => 11
-    t.string   "cellar_location", :limit => 11
-    t.string   "slug",            :limit => 11
+    t.string   "cellar_num",       :limit => 11
+    t.string   "cellar_location",  :limit => 11
+    t.string   "slug",             :limit => 11
     t.integer  "position"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "photo_id"
+    t.string   "cover_image_uid"
+    t.string   "cover_image_name"
   end
 
   create_table "seo_meta", :force => true do |t|

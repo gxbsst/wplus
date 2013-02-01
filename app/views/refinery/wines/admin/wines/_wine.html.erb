@@ -3,7 +3,7 @@
     <%= check_box_tag "wine[ids][]", wine.id %>
   </td>
   <td>
-    <%= image_fu(wine.photo, "70x70px")%>
+    <%= select_image_from_wine(wine) %>
   </td>
 
   <td>

@@ -51,7 +51,16 @@ module Refinery
           end
         end
 
+        def get_image_url(detail_photos, wine_photos)
+          if detail_photos.present?
+            "#{SEARCH_WINE_SERVER_URL}#{detail_photos.first['image']['url']}" #获取原始图片
+          elsif wine_photos.present?
+            "#{SEARCH_WINE_SERVER_URL}#{wine_photos.first['image']['url']}"
+          end
+        end
+
         def init_wine(wine_info)
+          @image_url = get_image_url(wine_info['photos'], wine_info['wine']['photos'])
           @wine = Refinery::Wines::Wine.new(
             :name_en => wine_info['wine']['name_en'],
             :name_zh => wine_info['wine']['name_zh'],
@@ -63,7 +72,8 @@ module Refinery
             :alcoholicity => wine_info['alcoholicity'],
             :variety => wine_info['show_region_percentage'],
             :rating_rp => get_rating(wine_info, "RP"),
-            :rating_jr => get_rating(wine_info, "JR")
+            :rating_jr => get_rating(wine_info, "JR"),
+            :cover_image_url => @image_url
           )
         end
                 

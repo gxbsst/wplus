@@ -3,12 +3,17 @@ module Refinery
   module Wines
     class Wine < Refinery::Core::BaseModel
 
+      image_accessor :cover_image
+
       extend FriendlyId
       friendly_id :name_en, use: :slugged
 
       self.table_name = 'refinery_wines'
 
-      attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :wine_style_id, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :cellar_num, :cellar_location, :slug, :position
+      attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :wine_style_id, 
+                      :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, 
+                      :rating_jr, :price, :info, :cellar_num, :cellar_location, :slug, 
+                      :position, :cover_image_uid, :cover_image_name, :cover_image, :cover_image_url
 
       acts_as_indexed :fields => [:vintage, :name_en, :name_zh, :region, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :info, :cellar_num, :cellar_location, :slug]
 
