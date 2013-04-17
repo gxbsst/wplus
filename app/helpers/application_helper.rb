@@ -18,4 +18,12 @@ module ApplicationHelper
 		first_item = {'选择种类' => nil}
 		options_for_select first_item.merge(api_type_hash)
 	end
+
+	def select_image_from_wine(wine)
+		if wine.photo
+			image_fu wine.photo, "70x70"
+		elsif wine.cover_image
+			image_tag wine.cover_image.thumb('70x70').url
+		end
+	end
 end

@@ -2,7 +2,7 @@ zh-CN:
   refinery:
     plugins:
       api_tasting_flights:
-        title: Api Tasting Flights
+        title: 系列品鉴(客户端)
     api_tasting_flights:
       admin:
         api_tasting_flights:
@@ -26,8 +26,8 @@ zh-CN:
   activerecord:
     attributes:
       'refinery/api_tasting_flights/api_tasting_flight':
-        price: Price
-        sku: Sku
-        name_en: Name En
-        name_zh: Name Zh
-        image: Image
+        price: 价格
+        sku: 商品编号
+        name_en: "英文名"
+        name_zh: 中文名
+        image: 图片

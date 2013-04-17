@@ -2,7 +2,7 @@ zh-CN:
   refinery:
     plugins:
       api_wines:
-        title: Api Wines
+        title: 酒(客户端)
     api_wines:
       admin:
         api_wines:
@@ -43,5 +43,5 @@ zh-CN:
         info: '介绍信息'
         cellar_num: '酒柜号'
         cellar_location: '位置'
-        slug: Slug
+        slug: 商品编号
         image_id: 图片

@@ -11,6 +11,9 @@ Refinery::Core::Engine.routes.append do
       resources :wines, :except => :show do
         collection do
           post :update_positions
+          get :search_wine
+          get :get_wine
+          get :get_wine_detail
         end
       end
     end

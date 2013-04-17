@@ -23,12 +23,6 @@
   </div>
   
   <div class='field'>
-    <%= f.label :region -%>
-    <%= f.text_field :region  -%>
-
-  </div>
-  
-  <div class='field'>
     <%= f.label :wine_style_id -%>
     <%= f.text_field :wine_style_id, :value => WineStyle.first.id  -%>
 
@@ -43,6 +37,12 @@
   <div class='field'>
     <%= f.label :alcoholicity -%>
     <%= f.text_field :alcoholicity  -%>
+
+  </div>
+
+  <div class='field'>
+    <%= f.label :region -%>
+    <%= f.text_field :region  -%>
 
   </div>
   

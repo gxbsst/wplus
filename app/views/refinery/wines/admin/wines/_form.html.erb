@@ -1,8 +1,10 @@
-<%= form_for [refinery, :wines_admin, @wine] do |f| -%>
+<%= form_for [refinery, :wines_admin, @wine],:html => {:multipart => true} do |f| -%>
   <%= render '/refinery/admin/error_messages',
               :object => @wine,
               :include_object_name => true %>
   
+   <label>来自iwine的图片地址</label>
+  <%= f.text_field :cover_image_url, :value => @image_url %>
 
     
   <div class='field'>

@@ -3,7 +3,7 @@
     <%= check_box_tag "wine[ids][]", wine.id %>
   </td>
   <td>
-    <%= image_fu(wine.photo, "70x70")%>
+    <%= select_image_from_wine(wine) %>
   </td>
 
   <td>
@@ -24,9 +24,8 @@
   </td>
 
   <td>
-    <%= wine.wine_style.name %>
+    <%= wine.wine_style.try(:name) %>
   </td>
-
 
   <td>
     <span>

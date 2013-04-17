@@ -1,0 +1,4 @@
+<%= form_tag "/refinery/wines/get_wine", :method => :get do %>
+  <%= text_field_tag "word", params[:word] %>
+  <%= submit_tag "搜索" %>
+<% end %>
