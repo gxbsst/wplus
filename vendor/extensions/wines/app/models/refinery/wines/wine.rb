@@ -13,15 +13,13 @@ module Refinery
       attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :wine_style_id, 
                       :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, 
                       :rating_jr, :price, :info, :cellar_num, :cellar_location, :slug, 
-                      :position, :cover_image_uid, :cover_image_name, :cover_image, :cover_image_url
-      attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :region_zh, :wine_style_id, :capacity, :alcoholicity,
-                      :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :cellar_num,
-                      :cellar_location, :slug, :position, :chateau
+                      :position, :cover_image_uid, :cover_image_name, :cover_image, :cover_image_url, :chateau
 
       acts_as_indexed :fields => [:vintage, :name_en, :name_zh, :region, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :info, :cellar_num, :cellar_location, :slug]
 
       validates :vintage, :name_en, :presence => true
       validates :name_en, :uniqueness => {:scope => :vintage}
+
       belongs_to :photo, :class_name => '::Refinery::Image'
       belongs_to :wine_style
 
