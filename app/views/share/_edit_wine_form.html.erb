@@ -12,7 +12,8 @@
 
 <div class='field'>
   <%= f.label :vintage -%>
-  <%= select_year Time.local(vintage.to_s), {:field_name => "#{model_name}[vintage]", 
+  <%= f.text_field :vintage  -%>
+  <%#= select_year Time.local(vintage.to_s), {:field_name => "#{model_name}[vintage]",
                                 :start_year => Time.now.year, 
                                 :end_year => 1950, 
                                 :prompt => "选择年代"}, {:name => "#{model_name}[vintage]"}-%>
@@ -25,8 +26,20 @@
 
   </div>
 
-  
-  <div class='field'>
+ <div class='field'>
+   <%= f.label :region_zh -%>
+   <%= f.text_field :region_zh  -%>
+
+ </div>
+
+ <div class='field'>
+   <%= f.label :chateau -%>
+   <%= f.text_field :chateau  -%>
+ </div>
+
+
+
+ <div class='field'>
     <%= f.label :capacity -%>
     <%= f.text_field :capacity  -%>mL
 

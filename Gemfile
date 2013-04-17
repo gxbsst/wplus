@@ -82,3 +82,5 @@ gem 'refinerycms-api_wines', :path => 'vendor/extensions'
 gem 'refinerycms-api_foods', :path => 'vendor/extensions'
 gem 'refinerycms-api_waters', :path => 'vendor/extensions'
 gem 'refinerycms-api_tasting_flights', :path => 'vendor/extensions'
+
+gem 'commands', :group => [:development, :test]

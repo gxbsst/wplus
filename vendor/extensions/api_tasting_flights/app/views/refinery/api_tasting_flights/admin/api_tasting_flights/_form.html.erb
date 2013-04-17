@@ -47,9 +47,10 @@
   <%= f.fields_for :api_tasting_flight_items, @api_tasting_flight_items do |i| %>
     <div class='field'>
         <tr>
-          <td>  
+          <td>
+            <%= i.hidden_field :wine_id %>
             <%= i.text_field :image_id, :type => 'hidden' %>
-            <%= image_fu(i.object.image, "70x70px")%>
+            <%= image_fu(i.object.image, "70x70")%>
           </td>
           <td>
             <%= i.text_field :name_en, :type => 'hidden' %>

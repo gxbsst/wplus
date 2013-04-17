@@ -17,14 +17,15 @@ module Refinery
         end
 
         def new
-        	wines = Refinery::Wines::Wine.find(params[:wine][:ids])
-        	@api_tasting_flight = Refinery::ApiTastingFlights::ApiTastingFlight.new(:sku => SecureRandom.uuid)
-        	#初始化 items
-        	@api_tasting_flight_items = []
-        	wines.each do |wine|
-        		item = @api_tasting_flight.api_tasting_flight_items.where(:name_en => wine.name_en).
-        												first_or_initialize(:name_zh => wine.name_zh,
-        																						:image_id => wine.photo_id)
+          wines = Refinery::Wines::Wine.find(params[:wine][:ids])
+          @api_tasting_flight = Refinery::ApiTastingFlights::ApiTastingFlight.new(:sku => SecureRandom.uuid)
+          #初始化 items
+          @api_tasting_flight_items = []
+          wines.each do |wine|
+            item = @api_tasting_flight.api_tasting_flight_items.where(:name_en => wine.name_en).
+                first_or_initialize(:name_zh => wine.name_zh,
+                                    :image_id => wine.photo_id,
+                                    :wine_id => wine.id)
         		@api_tasting_flight_items << item
         	end
         end

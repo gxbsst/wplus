@@ -8,7 +8,9 @@ module Refinery
 
       self.table_name = 'refinery_wines'
 
-      attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :wine_style_id, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :cellar_num, :cellar_location, :slug, :position
+      attr_accessible :photo_id, :vintage, :name_en, :name_zh, :region, :region_zh, :wine_style_id, :capacity, :alcoholicity,
+                      :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :cellar_num,
+                      :cellar_location, :slug, :position, :chateau
 
       acts_as_indexed :fields => [:vintage, :name_en, :name_zh, :region, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :info, :cellar_num, :cellar_location, :slug]
 
@@ -16,6 +18,10 @@ module Refinery
       validates :name_en, :uniqueness => true
       belongs_to :photo, :class_name => '::Refinery::Image'
       belongs_to :wine_style
+
+      def style
+        "#{wine_style.name_en} #{wine_style.name_zh}"
+      end
 
       def year_and_name_zh
       	"#{vintage} #{name_zh}"

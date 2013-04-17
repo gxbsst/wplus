@@ -11,10 +11,12 @@ namespace :init_wine_style do
       ['Rose Sparkling', '起泡粉红葡萄酒'],
       ['Port', '波特酒'],
       ['Sherry', '雪利酒'],
+      ['Sparkling', '起泡酒'],
       ['Other Fortified', '其它加强酒'],
       ['Others', '其它']
-
     ]
+
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE wine_styles")
 
     styles.each do |style|
     	wine_style = WineStyle.where(:name_en => style[0]).first_or_create(:name_zh => style[1])
