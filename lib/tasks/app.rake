@@ -28,6 +28,12 @@ namespace :app do
   task :init_wines => :environment do
     CSV.foreach(Rails.root.join('lib', 'tasks', 'wines2.csv')) do |line|
         wine = init_by_csv(line)
+
+        # TODO: UPLOAD IMAGE
+        #image_file = File.open('file_name.png')
+        #image = wine.create_image(image_file)
+        #wine.photo_id = image.id
+
         wine.save
     end
   end

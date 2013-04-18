@@ -42,6 +42,11 @@ module Refinery
       def wine_position
       	"酒柜 ##{cellar_num}, ##{cellar_location}"
       end
+
+      def create_image(image) # image is File.open(image file)
+         Refinery::Image.create(image: image)
+      end
+
     end
   end
 end
