@@ -5,8 +5,12 @@
     </li>
   <% end %>
   <li>
-    <%= link_to t('.create_new'), refinery.search_wine_wines_admin_wines_path,
+    <%= link_to 'iWine 添加', refinery.search_wine_wines_admin_wines_path,
                  :class => "add_icon" %>
+  </li>
+
+  <li>
+    <%= link_to '本地添加', refinery.new_wines_admin_wine_path, :class => :add_icon %>
   </li>
 <% if !searching? && ::Refinery::Wines::Admin::WinesController.sortable? && ::Refinery::Wines::Wine.any? %>
   <li>

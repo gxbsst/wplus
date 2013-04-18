@@ -3,8 +3,9 @@ module Refinery
     class ApiTastingFlight < Refinery::Core::BaseModel
       self.table_name = 'refinery_api_tasting_flights'
 
-      attr_accessible :price, :sku, :name_en, :name_zh, :image_id, :position, :api_tasting_flight_items_attributes
- 
+      attr_accessible :price, :sku, :name_en, :name_zh, :image_id, :position, 
+      :api_tasting_flight_items_attributes, :size
+
       acts_as_indexed :fields => [:sku, :name_en, :name_zh]
 
       validates :name_en, :sku, :presence => true

@@ -6,13 +6,8 @@ module Api
 
     class << self
       def init
-        #
-        # TODO
-        # 完善refinery 的flight item, 添加 size
-        # 和cameron 确认为什么flight 需要图片
-
         Refinery::ApiTastingFlights::ApiTastingFlight.all.each do |item|
-          tasting_flight = find_or_create_by_name_en(item.name_en, :name_zh => item.name_zh, :price => item.price)
+          tasting_flight = find_or_create_by_name_en(item.name_en, :name_zh => item.name_zh, :price => item.price, :size => item.size)
           item.api_tasting_flight_items.each do |fi|
             wine_id = ::Api::Wine.find_by_vintage_and_name_en(fi.wine.vintage, fi.wine.name_en).try(:id)
             tf_item = tasting_flight.tasting_flight_items.build(:wine_id => wine_id)
