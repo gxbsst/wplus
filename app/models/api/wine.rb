@@ -30,6 +30,10 @@ module Api
             :info => wine.info,
             :image => wine.photo.try(:image_name) || -1
           )
+
+          # copy image
+          copy_image(wine.photo) if wine.photo
+
         end
       end
 

@@ -10,7 +10,11 @@ module Api
     class << self
       def init
         Refinery::ApiFoods::ApiFood.all.each do |item|
-          food = find_or_create_by_image(item.image.image_name)
+          food = find_or_create_by_image(item.image.try(:image_name))
+
+          #copy image
+          copy_image(item.image) if item.image
+
           item.api_food_items.each do |fi|
             food_item = food.food_items.build(
                 :name_en => fi.name_en || -1,

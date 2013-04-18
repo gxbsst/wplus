@@ -95,4 +95,5 @@ vendor/extensions/**/spec/dummy
 .gitkeep
 
 database.yml
+db/images
 
