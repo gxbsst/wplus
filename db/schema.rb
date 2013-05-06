@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418020728) do
+ActiveRecord::Schema.define(:version => 20130423035045) do
 
   create_table "api_food_items", :force => true do |t|
     t.string   "name_en"
@@ -273,6 +273,21 @@ ActiveRecord::Schema.define(:version => 20130418020728) do
     t.string   "chateau"
     t.string   "cover_image_uid"
     t.string   "cover_image_name"
+    t.string   "status"
+    t.string   "bar_category"
+    t.string   "tags"
+    t.float    "trade_price"
+    t.float    "act_price"
+    t.string   "disc_rate"
+    t.string   "wine_list_price"
+    t.string   "final_list_price"
+    t.string   "source"
+    t.text     "description"
+    t.string   "remark"
+    t.text     "tasting_notes_en"
+    t.text     "tasting_notes_cn"
+    t.string   "enclosure"
+    t.string   "bottle_format"
   end
 
   create_table "seo_meta", :force => true do |t|

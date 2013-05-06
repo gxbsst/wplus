@@ -19,8 +19,8 @@ module Api
           :around => ['Walk Around', '随便看看']
         }
 
-        types.each_with_index do |index, value|
-          find_or_create_by_type_and_typename_en_and_typename_cn(index.to_s, value[0], value[1])
+        types.each do |key, value|
+          find_or_create_by_type_and_typename_en_and_typename_cn(key.to_s, value[0], value[1])
         end
       end
     end
