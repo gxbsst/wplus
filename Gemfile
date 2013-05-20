@@ -84,3 +84,5 @@ gem 'refinerycms-api_waters', :path => 'vendor/extensions'
 gem 'refinerycms-api_tasting_flights', :path => 'vendor/extensions'
 
 gem 'commands', :group => [:development, :test]
+
+gem 'refinerycms-members', :path => 'vendor/extensions'

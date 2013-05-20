@@ -21,6 +21,8 @@ PATH
       refinerycms-core (~> 2.0.9)
     refinerycms-foods (1.0)
       refinerycms-core (~> 2.0.9)
+    refinerycms-members (1.0)
+      refinerycms-core (~> 2.0.9)
     refinerycms-wines (1.0)
       refinerycms-core (~> 2.0.9)
 
@@ -322,6 +324,7 @@ DEPENDENCIES
   refinerycms-drinks!
   refinerycms-foods!
   refinerycms-i18n (~> 2.0.0)
+  refinerycms-members!
   refinerycms-wines!
   rspec-rails (= 2.11.4)
   sass-rails (~> 3.2.3)
