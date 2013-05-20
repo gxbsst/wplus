@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423035045) do
+ActiveRecord::Schema.define(:version => 20130520052712) do
 
   create_table "api_food_items", :force => true do |t|
     t.string   "name_en"
@@ -249,8 +249,8 @@ ActiveRecord::Schema.define(:version => 20130423035045) do
 
   create_table "refinery_wines", :force => true do |t|
     t.string   "vintage",          :limit => 11
-    t.string   "name_en",          :limit => 11
-    t.string   "name_zh",          :limit => 11
+    t.string   "name_en"
+    t.string   "name_zh"
     t.string   "region"
     t.integer  "wine_style_id"
     t.string   "capacity",         :limit => 11
@@ -264,7 +264,7 @@ ActiveRecord::Schema.define(:version => 20130423035045) do
     t.text     "info"
     t.string   "cellar_num",       :limit => 11
     t.string   "cellar_location",  :limit => 11
-    t.string   "slug",             :limit => 11
+    t.string   "slug"
     t.integer  "position"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false

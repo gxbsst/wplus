@@ -12,9 +12,9 @@ module Api
         #connection.execute('DELETE FROM api_wines IF EXISTS')
         Refinery::Wines::Wine.all.each do |wine|
           create(
-            :vintage => wine.vintage || -1,
-            :name_en => wine.name_en || -1 ,
-            :name_zh => wine.name_zh || -1,
+            :vintage => wine.try(:vintage) || -1,
+            :name_en => wine.try(:name_en) || -1 ,
+            :name_zh => wine.try(:name_zh) || -1,
             :region => "#{wine.region} #{wine.region_zh}",
             :chateau => wine.chateau || -1,
             :wine_style =>  wine.style,

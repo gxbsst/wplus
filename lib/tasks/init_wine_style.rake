@@ -6,6 +6,7 @@ namespace :init_wine_style do
       ['Red', '红葡萄酒'],
       ['White', '白葡萄酒'],
       ['Rose', '粉红葡萄酒'],
+      ['Rosé', '粉红葡萄酒'],
       ['Red Sparkling', '起泡红葡萄酒'],
       ['White Sparkling', '起泡白葡萄酒'],
       ['Rose Sparkling', '起泡粉红葡萄酒'],
@@ -13,7 +14,10 @@ namespace :init_wine_style do
       ['Sherry', '雪利酒'],
       ['Sparkling', '起泡酒'],
       ['Other Fortified', '其它加强酒'],
-      ['Others', '其它']
+      ['Others', '其它'],
+      ['Champagne','香槟'],
+      ['Fortified', '加强酒'],
+      ['Sweet Wine', '甜酒']
     ]
 
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE wine_styles")

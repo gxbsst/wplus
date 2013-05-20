@@ -27,7 +27,7 @@ module Refinery
       belongs_to :wine_style
 
       def style
-        "#{wine_style.name_en} #{wine_style.name_zh}"
+        "#{wine_style.try(:name_en)} #{wine_style.try(:name_zh)}"
       end
 
       def year_and_name_zh
