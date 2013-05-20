@@ -100,3 +100,6 @@ db/images
 pic_emw
 wine.csv
 
+winelist pics
+*.csv
+
