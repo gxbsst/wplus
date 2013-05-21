@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @table_list.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Categoryid</h1>
+    <p>
+      <%=raw @table_list.categoryid %>
+    </p>
+  </section>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @table_list.name %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="table_lists">
+      <% @table_lists.each do |table_list| %>
+        <li>
+          <%= link_to table_list.name, refinery.table_lists_table_list_path(table_list) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

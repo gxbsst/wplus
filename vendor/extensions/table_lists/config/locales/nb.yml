@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      table_lists:
+        title: Table Lists
+    table_lists:
+      admin:
+        table_lists:
+          actions:
+            create_new: Lag en ny Table List
+            reorder: Endre rekkefølgen på Table Lists
+            reorder_done: Ferdig å endre rekkefølgen Table Lists
+          records:
+            title: Table Lists
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Table Lists enda. Klikk på "Lag en ny Table List" for å legge til din første table list.
+          table_list:
+            view_live_html: Vis hvordan denne table list ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne table list
+            delete: Fjern denne table list permanent
+      table_lists:
+        show:
+          other: Andre Table Lists
+  activerecord:
+    attributes:
+      'refinery/table_lists/table_list':
+        categoryid: Categoryid
+        name: Name

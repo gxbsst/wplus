@@ -1,0 +1,28 @@
+en:
+  refinery:
+    plugins:
+      table_lists:
+        title: Table Lists
+    table_lists:
+      admin:
+        table_lists:
+          actions:
+            create_new: Add New Table List
+            reorder: Reorder Table Lists
+            reorder_done: Done Reordering Table Lists
+          records:
+            title: Table Lists
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Table Lists yet. Click "Add New Table List" to add your first table list.
+          table_list:
+            view_live_html: View this table list live <br/><em>(opens in a new window)</em>
+            edit: Edit this table list
+            delete: Remove this table list forever
+      table_lists:
+        show:
+          other: Other Table Lists
+  activerecord:
+    attributes:
+      'refinery/table_lists/table_list':
+        categoryid: Categoryid
+        name: Name

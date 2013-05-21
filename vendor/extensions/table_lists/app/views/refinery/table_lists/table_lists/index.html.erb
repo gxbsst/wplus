@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="table_lists">
+    <% @table_lists.each do |table_list| %>
+      <li>
+        <%= link_to table_list.name, refinery.table_lists_table_list_path(table_list) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

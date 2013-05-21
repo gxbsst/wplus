@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520074845) do
+ActiveRecord::Schema.define(:version => 20130520075909) do
 
   create_table "api_food_items", :force => true do |t|
     t.string   "name_en"
@@ -227,6 +227,14 @@ ActiveRecord::Schema.define(:version => 20130520074845) do
 
   add_index "refinery_roles_users", ["role_id", "user_id"], :name => "index_refinery_roles_users_on_role_id_and_user_id"
   add_index "refinery_roles_users", ["user_id", "role_id"], :name => "index_refinery_roles_users_on_user_id_and_role_id"
+
+  create_table "refinery_table_lists", :force => true do |t|
+    t.integer  "categoryid"
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "refinery_user_plugins", :force => true do |t|
     t.integer "user_id"

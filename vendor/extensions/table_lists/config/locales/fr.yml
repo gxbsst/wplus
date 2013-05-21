@@ -1,0 +1,28 @@
+fr:
+  refinery:
+    plugins:
+      table_lists:
+        title: Table Lists
+    table_lists:
+      admin:
+        table_lists:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Table List
+            reorder: Réordonner les Table Lists
+            reorder_done: Fin de réordonnancement des Table Lists
+          records:
+            title: Table Lists
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Table List. Cliquer sur "Créer un(e) nouve(au/l/lle) Table List" pour créer votre premi(er/ère) table list.'
+          table_list:
+            view_live_html: Voir ce(t/tte) table list <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) table list
+            delete: Supprimer définitivement ce(t/tte) table list
+      table_lists:
+        show:
+          other: Autres Table Lists
+  activerecord:
+    attributes:
+      'refinery/table_lists/table_list':
+        categoryid: Categoryid
+        name: Name

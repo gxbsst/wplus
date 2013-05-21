@@ -25,5 +25,10 @@ module ApplicationHelper
 		elsif wine.cover_image
 			image_tag wine.cover_image.thumb('70x70').url
 		end
-	end
+  end
+
+  def table_list_option_select
+
+
+  end
 end

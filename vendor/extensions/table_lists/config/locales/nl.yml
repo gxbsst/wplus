@@ -1,0 +1,28 @@
+nl:
+  refinery:
+    plugins:
+      table_lists:
+        title: Table Lists
+    table_lists:
+      admin:
+        table_lists:
+          actions:
+            create_new: Maak een nieuwe Table List
+            reorder: Wijzig de volgorde van de Table Lists
+            reorder_done: Klaar met het wijzingen van de volgorde van de Table Lists
+          records:
+            title: Table Lists
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Table Lists. Druk op 'Maak een nieuwe Table List' om de eerste aan te maken.
+          table_list:
+            view_live_html: Bekijk deze table list op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze table list
+            delete: Verwijder deze table list voor eeuwig
+      table_lists:
+        show:
+          other: Andere Table Lists
+  activerecord:
+    attributes:
+      'refinery/table_lists/table_list':
+        categoryid: Categoryid
+        name: Name

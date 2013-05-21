@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      table_lists:
+        title: Table Lists
+#        article: masculino/femenino
+    table_lists:
+      admin:
+        table_lists:
+          actions:
+            create_new: Crear nuevo table list
+            reorder: Reordenar table lists
+            reorder_done: Reordenación de table lists completada
+          records:
+            title: Table Lists
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay table lists todavía. Pulsa en "Crear nuevo Table List" para crear tu primer table list.
+          table_list:
+            view_live_html: Ver este table list como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este table list
+            delete: Borrar este table list para siempre
+      table_lists:
+        show:
+          other: Otros table lists
+  activerecord:
+    attributes:
+      'refinery/table_lists/table_list':
+        categoryid: Categoryid
+        name: Name

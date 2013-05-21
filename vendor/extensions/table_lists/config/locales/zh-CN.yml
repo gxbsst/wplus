@@ -1,0 +1,30 @@
+zh-CN:
+  refinery:
+    plugins:
+      table_lists:
+        title: Table Lists
+    table_lists:
+      admin:
+        table_lists:
+          actions:
+            create_new: 建立新的 Table List
+            reorder: 对 Table Lists 重新排序
+            reorder_done: 对 Table Lists 的重新排序结束
+          records:
+            title: Table Lists
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Table Lists yet. Click "Add New Table List" to add your first table list.
+            no_items_yet: 目前没有 Table Lists . 点击 "Add New Table List" 创建一个table list.
+          table_list:
+            view_live_html: 查看 table list 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 table list
+            delete: 永久删除 table list
+      table_lists:
+        show:
+          other: 其他 Table Lists
+  activerecord:
+    attributes:
+      'refinery/table_lists/table_list':
+        categoryid: Categoryid
+        name: Name

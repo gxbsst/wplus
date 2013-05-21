@@ -34,3 +34,6 @@ Refinery::ApiTastingFlights::Engine.load_seed
 
 # Added by Refinery CMS Members extension
 Refinery::Members::Engine.load_seed
+
+# Added by Refinery CMS Table Lists extension
+Refinery::TableLists::Engine.load_seed

@@ -1,0 +1,23 @@
+<%= form_for [refinery, :table_lists_admin, @table_list] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @table_list,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :categoryid -%>
+    <%= f.select  :categoryid, options_for_select(@table_list.table_lists)  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.table_lists.admin.table_lists.table_list'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @table_list.name) %>
+<% end -%>
