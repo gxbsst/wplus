@@ -101,6 +101,11 @@ namespace :app do
     Api::Water.init
     # init Task Flight & Task Flight Items
     Api::TastingFlight.init
+    # Users
+    Api::User.init
+    # Table List
+    Api::TableList.init
+
   end
 
 end

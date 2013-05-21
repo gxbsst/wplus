@@ -67,7 +67,7 @@ class  Init < ActiveRecord::Migration
       t.string  "image",       :limit => 100
     end
 
-    create_table "api_members", :force => true do |t|
+    create_table "api_user", :force => true do |t|
       t.string "name",     :limit => 200
       t.string "password", :limit => 200
     end
@@ -134,7 +134,7 @@ class  Init < ActiveRecord::Migration
     drop_table :api_tasting_flight_items
     drop_table :api_tasting_flights
     drop_table :api_type
-    drop_table :api_members
+    drop_table :api_user
     drop_table :api_water_items
     drop_table :api_waters
     drop_table :api_wine_sales
