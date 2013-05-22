@@ -5,7 +5,7 @@ def wine_id(name_en)
 end
 
 def parse_region(line)
- [line[3], line[4], line[5], line[6]].compact.join(' > ')
+  [line[3], line[4], line[5], line[6]].compact.join(' > ')
 end
 
 def wine_price(line)
@@ -58,7 +58,7 @@ namespace :app do
     CSV.open(filename, :headers => true).each do |line|
       begin
         wine = init_by_csv(line)
-        
+
         # upload image
         if line[20].present?
           file_path = Rails.root.join('lib', 'tasks', 'winelist pics', line[20])
@@ -78,13 +78,13 @@ namespace :app do
 
   desc "Init Api Sale Type"
   task :init_api_sale_type => :environment  do
-   Api::SaleType.init
+    Api::SaleType.init
   end
 
   desc "Generate API DATABASE"
   task  :init_api_database => :environment do
 
-   Api::SaleType.init
+    Api::SaleType.init
     # init region
     Api::CategoryRegionKeyword.init
     # init variety
