@@ -87,3 +87,8 @@ gem 'commands', :group => [:development, :test]
 
 gem 'refinerycms-members', :path => 'vendor/extensions'
 gem 'refinerycms-table_lists', :path => 'vendor/extensions'
+
+# export exel
+gem 'axlsx'
+gem 'acts_as_xlsx'
+gem 'axlsx_rails'

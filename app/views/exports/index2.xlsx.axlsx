@@ -1,0 +1,33 @@
+# https://github.com/randym/axlsx/blob/master/examples/example.rb
+xlsx_package = Axlsx::Package.new
+xlsx_package.use_shared_strings = true
+wb = xlsx_package.workbook
+
+cat = []
+wb.add_worksheet(name: '菜品') do |sheet|
+  sheet.add_row @titles
+  @mapping = {'by_btl' => 'Bottle', 
+              'by_glass' => 'Glass',
+              'by_monthly promotion' => 'By Monthly Promotion'}
+  @wines.each do |r|
+    row_data = [r.sku, r.name, @mapping[r.bar_category], r.price, '瓶']
+    sheet.add_row row_data
+    cat << r.bar_category unless cat.include? r.bar_category
+  end
+end
+
+wb.add_worksheet(name: '二级菜单') do |sheet|
+  sheet.add_row ['二级菜单编号', '二级菜单名称', '所属一级菜单']
+  cat.compact.each_with_index do |v,i|
+    row_data = [i+1, @mapping[v], 'Special' ]
+    sheet.add_row row_data
+  end
+end
+
+
+wb.add_worksheet(name: '一级菜单') do |sheet|
+  sheet.add_row ['一级菜单编号', '一级菜单名称']
+    row_data = [1, 'Special']
+    sheet.add_row row_data
+end
+

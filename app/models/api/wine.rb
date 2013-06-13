@@ -38,7 +38,8 @@ module Api
       
       def parse_variety(variety)
         return -1 if !variety.present?
-        variety.gsub(/\n/, "")
+        #variety.gsub(/\n/, "")
+        variety.gsub(/\//, " ")
       end
 
     end

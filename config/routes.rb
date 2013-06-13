@@ -1,5 +1,8 @@
 Wineplus::Application.routes.draw do
 
+ get 'exports/index', :to => "exports#index"
+ get 'exports/index2', :to => "exports#index2"
+
  resources :api_food_item
 
   # This line mounts Refinery's routes at the root of your application.
