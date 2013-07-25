@@ -4,6 +4,6 @@ class WineStyle < ActiveRecord::Base
   has_many :wines
 
   def name
-  	"#{name_en}/#{name_zh}"
+  	"#{name_en}"
   end
 end

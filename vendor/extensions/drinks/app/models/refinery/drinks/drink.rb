@@ -3,7 +3,7 @@ module Refinery
     class Drink < Refinery::Core::BaseModel
       self.table_name = 'refinery_drinks'
 
-      attr_accessible :name_en, :name_zh, :price, :position
+      attr_accessible :name_en, :name_zh, :price, :position, :sku
 
       acts_as_indexed :fields => [:name_en, :name_zh]
 

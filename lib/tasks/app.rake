@@ -1,11 +1,14 @@
 #encoding: utf-8
-def wine_id(name_en)
-  name_en ||= 'Others'
-  WineStyle.find_or_create_by_name_en(name_en).try(:id)
+def wine_id(name_en = 'Others')
+  if name_en.present?
+    WineStyle.find_or_create_by_name_en(name_en).try(:id)
+  else
+    WineStyle.find_or_create_by_name_en('Others').try(:id)
+  end
 end
 
 def parse_region(line)
-  [line[3], line[4], line[5], line[6]].compact.join(' > ')
+  [line[3], line[4], line[5], line[6]].compact.join('>')
 end
 
 def wine_price(line)
@@ -16,7 +19,7 @@ def init_by_csv(line)
   puts "wine price: #{line[21]}\n"
   Refinery::Wines::Wine.new(
       :status => line[0],
-      :bar_category => line[1],
+      :bar_category => line[1] || 'by_btl',
       :wine_style_id => wine_id(line[2]),
       #3..6 is region
       :sku => line[7],
@@ -58,9 +61,10 @@ namespace :app do
   desc "init Wines data"
   task :init_wines => :environment do
     ActiveRecord::Base.connection.execute("TRUNCATE refinery_wines")
-    filename = Rails.root.join('lib', 'tasks', 'Masterfile_Winelist_20130606_for_Cameron-6.csv')
+    filename = Rails.root.join('lib', 'tasks', 'Masterfile_July2013-3','btl-表格 1.csv')
     CSV.open(filename, :headers => true).each do |line|
-      # begin
+      if line[0].present? && line[0].downcase == 'on' 
+        begin
         wine = init_by_csv(line)
         # upload image
         # if line[20].present?
@@ -74,11 +78,17 @@ namespace :app do
 
         puts "wine price: #{wine.price}\n"
         wine.save
-      # rescue Exception => e
+       rescue Exception => e
         puts "==========================#{line[10]}=======================\n"
+        binding.pry
         # puts e
-      # end
+       end
+      end
     end
+
+    # init mysql api_wines data
+    Refinery::ApiWines::ApiWine.delete_all
+    Refinery::ApiWines::ApiWine.init_data
   end
 
   desc "Update Wines" 
@@ -115,7 +125,6 @@ namespace :app do
 
   desc "Generate API DATABASE"
   task  :init_api_database => :environment do
-
     Api::SaleType.init
     # init region
     Api::CategoryRegionKeyword.init

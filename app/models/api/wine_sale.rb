@@ -12,6 +12,8 @@ module Api
 
     class << self
 
+      Refinery::ApiWines::ApiWine
+
       TYPES = [
           #每月精选
           {:class_name => 'MonthSpecial', :type_text => :monthly, :unit => '瓶'},

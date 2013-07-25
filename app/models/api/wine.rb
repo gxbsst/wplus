@@ -3,7 +3,7 @@ module Api
     include Support
 
     attr_accessible :vintage, :name_en, :name_zh, :region, :chateau, :wine_style, :capacity, :alcoholicity,
-    :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :image
+    :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :price, :info, :image, :sku
 
     class << self
 
@@ -12,6 +12,7 @@ module Api
         #connection.execute('DELETE FROM api_wines IF EXISTS')
         Refinery::Wines::Wine.all.each do |wine|
           create(
+            :sku => wine.try(:sku) || -1,
             :vintage => wine.try(:vintage) || -1,
             :name_en => wine.try(:name_en) || -1 ,
             :name_zh => wine.try(:name_zh) || -1,

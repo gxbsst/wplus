@@ -1,3 +1,4 @@
+# encoding: utf-8
 # https://github.com/randym/axlsx/blob/master/examples/example.rb
 xlsx_package = Axlsx::Package.new
 xlsx_package.use_shared_strings = true
@@ -10,20 +11,28 @@ wb.add_worksheet(name: '菜品') do |sheet|
   sheet.add_row @titles
 
   @wines.each do |r|
-    row_data = [r.sku, r.name, r.category, r.price, '瓶']
+    row_data = [r.sku, r.name, r.category, r.price || 0, '瓶']
     sheet.add_row row_data
     cat << {'category' => r.category, 'parent' => r.parent_cat } unless cat.include? r.category
     parent_cat << r.parent_cat
   end
 
-  @mapping = {'by_btl' => 'Bottle', 
-              'by_glass' => 'Glass',
+  @mapping = {'by_btl' => 'By Bottle', 
+              'by_glass' => 'By Glass',
               'by_monthly promotion' => 'By Monthly Promotion'}
+
   @wines2.each do |r|
     row_data = [r.sku, r.name, @mapping[r.bar_category], r.price, '瓶']
     sheet.add_row row_data
     cat2 << r.bar_category unless cat.include? r.bar_category
   end
+
+  tasting_flight = [[2074, 'Whites Assemblage', 'Tasting Flights', 158, 'Set'], [4244, 'A bite of Reds', 'Tasting Flights', 198, 'Set']]
+
+  # 添加tasting flight
+
+  tasting_flight.each {|i| sheet.add_row i}
+
 
 end
 

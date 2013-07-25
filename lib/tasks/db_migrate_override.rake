@@ -8,7 +8,7 @@ def remove_task(task_name)
   Rake.application.remove_task(task_name)
 end
 
-# usage: rake db:migrate RAILS_ENV=api SRCDIR=db/migrate_sqlite
+# usage: bundle exec rake db:migrate RAILS_ENV=api SRCDIR=db/migrate_sqlite
 namespace :db do
   remove_task 'db:migrate'
   desc "Migrate the database (options: VERSION=x, SRCDIR=path, VERBOSE=false)."

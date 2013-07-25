@@ -99,6 +99,7 @@ class  Init < ActiveRecord::Migration
     end
 
     create_table "api_wines", :force => true do |t|
+      t.string   "sku"
       t.string   "vintage"
       t.string   "name_en"
       t.string   "name_zh"

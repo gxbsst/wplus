@@ -7,7 +7,7 @@ module Refinery
       class WinesController < ::Refinery::AdminController
 
         crudify :'refinery/wines/wine',
-                :title_attribute => 'vintage', :xhr_paging => true
+                :title_attribute => 'vintage', :xhr_paging => true, :per_page => 1000
 
 
         def new
@@ -24,7 +24,7 @@ module Refinery
           result = Net::HTTP.get(uri)
           @wine_info = JSON.parse result
           page = params[:page] || 1
-          @wine_info = @wine_info.paginate(:page => page, :per => 5)
+          @wine_info = @wine_info.paginate(:page => page, :per => 1000)
         end
 
         def get_wine_detail

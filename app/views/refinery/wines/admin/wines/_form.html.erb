@@ -2,9 +2,9 @@
   <%= render '/refinery/admin/error_messages',
               :object => @wine,
               :include_object_name => true %>
-  
+  <!-- 
    <label>来自iwine的图片地址</label>
-  <%= f.text_field :cover_image_url, :value => @image_url %>
+  <%= f.text_field :cover_image_url, :value => @image_url %> -->
 
     
   <div class='field'>
@@ -13,8 +13,6 @@
 
   </div>
 
-
-  
 <%= render :partial => "/share/edit_wine_form", 
            :locals => {:f => f, 
                        :rating => @wine.rating, 

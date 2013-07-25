@@ -21,6 +21,11 @@
     <%= f.text_field :price  -%>
 
   </div>
+
+  <div class='field'>
+    <%= f.label :sku -%>
+    <%= f.text_field :sku -%>
+  </div>
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,

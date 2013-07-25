@@ -1,6 +1,6 @@
 #encoding: utf-8
 module Refinery
-  module ApiWines  
+  module ApiWines
     class ApiWine < Refinery::Core::BaseModel
       extend FriendlyId
       friendly_id :name_en, use: :slugged
@@ -14,8 +14,13 @@ module Refinery
 
       acts_as_indexed :fields => [:type, :vintage, :name_en, :name_zh, :region, :wine_style, :capacity, :alcoholicity, :variety, :rating, :rating_rp, :rating_ws, :rating_jr, :info, :cellar_num, :cellar_location, :slug]
 
-      validates :type, :price, :name_en, :sku, :presence => true
-      validates :sku, :uniqueness => true
+      validates :type, :price, :name_en, :presence => true
+      # validates :sku, :uniqueness => true
+      before_validation :set_price_default
+
+      def set_price_default
+        self.price = 0 if self.price.blank?
+      end
 
       scope :membership_discount, where(:type => "Refinery::ApiWines::MembershipDiscount")
       scope :month_special, where(:type => "Refinery::ApiWines::MonthSpecial")
@@ -24,16 +29,16 @@ module Refinery
       scope :wine_by_bottle, where(:type => "Refinery::ApiWines::WineByBottle")
 
       # by_btl 整瓶特卖, by_monthly 为 每月特卖， by_glass 单杯特卖
+      WINE_SALE_TYPE = {"by_btl" => Refinery::ApiWines::WineByBottle ,
+                        "by_monthly promotion" => Refinery::ApiWines::MonthSpecial, 
+                        "by_glass" => Refinery::ApiWines::SimpleCupDiscount }
 
       def self.init_data
-        # wine_sale_type = {"by_btl" => ::Refinery::ApiWines::WineByBottle ,
-        #                   "by_monthly promotion" => ::Refinery::ApiWines::MonthSpecial, 
-        #                   "by_glass" => ::Refinery::ApiWines::SimpleCupDiscount }
-       # Refinery::Wines::Wine.all.each do |wine|
-        # api_wine = new.init(wine)
-        # api_wine.type =wine_sale_type[wine.bar_category].to_s
-        # api_wine.save!
-       # end
+       Refinery::Wines::Wine.all.each do |wine|
+        api_wine = new.init(wine)
+        api_wine.type = WINE_SALE_TYPE[wine.bar_category].to_s
+        api_wine.save!
+       end
       end
 
       def init(wine)
@@ -85,6 +90,10 @@ module Refinery
       end
 
     end
+    class MonthSpecial < ApiWine; end
+    class MembershipDiscount < ApiWine; end
+    class RandomWine < ApiWine;end 
+    class SimpleCupDiscount < ApiWine;end
+
   end
 end
-

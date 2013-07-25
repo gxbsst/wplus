@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609094302) do
+ActiveRecord::Schema.define(:version => 20130614073000) do
 
   create_table "api_food_items", :force => true do |t|
     t.string   "name_en"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20130609094302) do
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "sku"
   end
 
   create_table "refinery_foods", :force => true do |t|
@@ -264,13 +265,13 @@ ActiveRecord::Schema.define(:version => 20130609094302) do
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
   create_table "refinery_wines", :force => true do |t|
-    t.string   "vintage",          :limit => 11
+    t.string   "vintage"
     t.string   "name_en"
     t.string   "name_zh"
     t.string   "region"
     t.integer  "wine_style_id"
-    t.string   "capacity",         :limit => 11
-    t.string   "alcoholicity",     :limit => 11
+    t.string   "capacity"
+    t.string   "alcoholicity"
     t.string   "variety"
     t.string   "rating",           :limit => 11
     t.string   "rating_rp",        :limit => 11
@@ -278,8 +279,8 @@ ActiveRecord::Schema.define(:version => 20130609094302) do
     t.string   "rating_jr",        :limit => 11
     t.float    "price"
     t.text     "info"
-    t.string   "cellar_num",       :limit => 11
-    t.string   "cellar_location",  :limit => 11
+    t.string   "cellar_num"
+    t.string   "cellar_location"
     t.string   "slug"
     t.integer  "position"
     t.integer  "photo_id"
@@ -322,10 +323,10 @@ ActiveRecord::Schema.define(:version => 20130609094302) do
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
 
   create_table "wine_styles", :force => true do |t|
-    t.string   "name_en",    :limit => 11
-    t.string   "name_zh",    :limit => 11
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "name_en",    :limit => 244
+    t.string   "name_zh",    :limit => 244
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
 end
