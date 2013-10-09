@@ -25,7 +25,8 @@ module Api
                 :price => fi.price,
                 :rect_left => fi.rect_left,
                 :rect_top => fi.rect_top,
-                :rect_color => fi.rect_color
+                :rect_color => fi.rect_color,
+                :sku => fi.sku
             )
             water_item.save
           end

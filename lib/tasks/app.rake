@@ -1,6 +1,6 @@
 #encoding: utf-8
 def wine_id(name_en = 'Others')
-  if name_en.present?
+  if name_en.present? && name_en != "0"
     WineStyle.find_or_create_by_name_en(name_en).try(:id)
   else
     WineStyle.find_or_create_by_name_en('Others').try(:id)
@@ -55,29 +55,59 @@ def init_by_csv(line)
 
 end
 
+def init_food_by_csv(line)
+  Refinery::Foods::Food.new(
+    name_en: line[9],
+    name_zh: line[10],
+    sku: line[7],
+    price: wine_price(line)
+    )
+end
+
 require 'csv'
 namespace :app do
 
   desc "init Wines data"
   task :init_wines => :environment do
     ActiveRecord::Base.connection.execute("TRUNCATE refinery_wines")
-    filename = Rails.root.join('lib', 'tasks', 'Masterfile_July2013-3','btl-表格 1.csv')
+    filename = Rails.root.join('lib', 'tasks', '汇总表-表格.csv')
     CSV.open(filename, :headers => true).each do |line|
-      if line[0].present? && line[0].downcase == 'on' 
+      if line[0].present? && line[0].downcase == 'on' && line[7].present?
         begin
-        wine = init_by_csv(line)
-        # upload image
-        # if line[20].present?
-        #   file_path = Rails.root.join('lib', 'tasks', 'winelist pics', line[20])
-        #   if File.exist? file_path
-        #     image_file = File.open(file_path)
-        #     image = wine.create_image(image_file)
-        #     wine.photo_id = image.id
-        #   end
-        # end
+        # 导入酒
+        code_bar = (line[1] || 'by_btl').downcase
+        if code_bar == 'by_btl' || code_bar == 'by_glass' || code_bar == 'MonthlySpecial'
+          wine = init_by_csv(line)
+          # upload image
+            file_path = Rails.root.join('lib', 'tasks', 'winelist pics', line[7] + '.png')
+            if File.exist? file_path
+              image_file = File.open(file_path)
+              image = wine.create_image(image_file)
+              wine.photo_id = image.id
+            end
 
-        puts "wine price: #{wine.price}\n"
-        wine.save
+          # upload image 
+          if line[20].present? && !(File.exist? file_path)
+            file_path = Rails.root.join('lib', 'tasks', 'winelist pics', line[20])
+            if File.exist? file_path
+              image_file = File.open(file_path)
+              image = wine.create_image(image_file)
+              wine.photo_id = image.id
+            end
+          end
+
+          puts "wine price: #{wine.price}\n"
+          wine.save
+        end
+
+        # 导入食品
+        if code_bar == 'food'
+          food = init_food_by_csv(line)
+          unless food.save
+            puts "not save food item: #{line[7]}"
+          end
+        end
+
        rescue Exception => e
         puts "==========================#{line[10]}=======================\n"
         binding.pry

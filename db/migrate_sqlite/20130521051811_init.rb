@@ -36,7 +36,8 @@ class  Init < ActiveRecord::Migration
       t.datetime "updated_at", :null => false
     end
 
-    create_table "api_tablelist", :force => true do |t|
+    create_table "api_tablelist", :id => false, :force => true do |t|
+       t.integer :id, :options => 'PRIMARY KEY'
       t.integer "categoryid"
       t.string  "name",       :limit => 100
     end
